@@ -1,12 +1,17 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SHIBA TRAIN LOG</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#e9f2f7;background:#0b1420}*{box-sizing:border-box}body{margin:0}header{background:#101f2d;padding:22px max(18px,calc((100vw - 1100px)/2));border-bottom:1px solid #294254}h1{margin:0;font-size:25px;letter-spacing:2px}h2{font-size:20px;margin:0 0 14px}p,small{color:#abc1cd}main{max-width:1100px;margin:auto;padding:20px}nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}button,.btn{border:1px solid #37536a;border-radius:10px;padding:11px 15px;background:#182e40;color:#e8f7ff;cursor:pointer;font-weight:650}button.active,.primary{background:#00b8c9;color:#05212b;border-color:#00b8c9}button:hover{filter:brightness(1.15)}section{display:none}section.active{display:block}.card{background:#122333;border:1px solid #294254;border-radius:15px;padding:18px;margin-bottom:15px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{font-size:26px;font-weight:800;color:#59e1e9;margin:7px 0}label{display:block;font-size:13px;color:#c1d4de;margin-bottom:6px}input,select,textarea{width:100%;background:#0c1a28;color:#fff;border:1px solid #395469;border-radius:8px;padding:11px;font:inherit}textarea{min-height:130px}form .grid{margin-bottom:14px}.hint{font-size:12px;color:#9db5c2}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.entry{padding:13px 0;border-bottom:1px solid #294254}.entry:last-child{border:0}.muted{color:#9fb5c4}.tag{display:inline-block;background:#224153;color:#78e3ea;padding:3px 8px;border-radius:20px;font-size:12px;margin:3px}.danger{color:#ffb3aa}.chartrow{display:grid;grid-template-columns:80px 1fr 42px;gap:10px;align-items:center;margin:9px 0}.bar{background:#23384a;border-radius:10px;height:12px;overflow:hidden}.bar>i{display:block;background:#12c8d3;height:100%}table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:9px;border-bottom:1px solid #30475b;text-align:left}th{color:#92cbd3}.scroll{overflow-x:auto}footer{text-align:center;padding:30px;color:#7e9baa}@media(max-width:500px){header{padding:20px}main{padding:12px}.metric{font-size:23px}}
+.set-row{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin-bottom:10px}fieldset{border:1px solid #395469;border-radius:10px;margin:0 0 16px;padding:12px}.reorder-handle{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.reorder-handle{cursor:grab;min-width:44px;min-height:44px;font-size:22px}.history-day{margin:22px 0;min-width:0}.history-time{background:#0c1a28;border:1px solid #294254;border-radius:10px;padding:12px;margin-bottom:12px}.history-exercise{background:#152a3b;border:1px solid #37536a;border-radius:14px;margin:12px 0;padding:14px;min-width:0;max-width:100%;overflow-wrap:anywhere}.history-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.history-card-head>div{min-width:0;flex:1}.history-card-head h4{font-size:18px;line-height:1.5;margin:0 0 6px;word-break:normal}.history-card-head .reorder-handle{flex:0 0 44px}.history-card-head small{line-height:1.7}.history-sets{margin-top:12px}.history-set{border-top:1px solid #30475b;padding:12px 0}.set-values{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}.set-values strong{color:#59e1e9;white-space:nowrap}.history-condition,.history-memo{line-height:1.7;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}.delete-set{font-size:12px;padding:8px 10px}.history-card-actions{display:flex;flex-wrap:wrap;gap:8px}.moving{opacity:.25}.drag-ghost{position:fixed;z-index:1000;pointer-events:none!important;box-shadow:0 12px 30px #0009;outline:2px solid #59e1e9;opacity:.96;margin:0;transform-origin:top center}.drag-ghost *{pointer-events:none!important}.drop-target{background:#214559;box-shadow:0 0 0 2px #59e1e9}.drop-target::after{content:attr(data-drop-label);display:block;color:#78e3ea;font-size:13px;font-weight:bold;padding-top:8px}.history-week{margin-top:24px}.history-time small{display:block}#historyList{min-width:0;max-width:100%}
+.edit-number-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.history-exercise label{margin:10px 0}.history-exercise input,.history-exercise select{min-width:0}.history-exercise textarea{min-height:70px}.moving{height:80px!important;overflow:hidden}.moving>*{visibility:hidden}.moving::before{content:"移動中";color:#59e1e9}.drag-ghost{max-height:45vh;overflow:hidden}.history-time{overflow-wrap:anywhere}
+.history-exercise:not(.editing),.history-time:not(.editing){-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.editing input,.editing textarea{-webkit-user-select:text;user-select:text}
+.voice-item,.voice-review{border:1px solid #37536a;background:#152a3b;border-radius:12px;padding:14px;margin:14px 0;min-width:0;overflow-wrap:anywhere}.voice-item label{margin:10px 0}.voice-item textarea{min-height:70px}.voice-set{border-top:1px solid #30475b;padding:10px 0}.voice-review>div{border-top:1px solid #30475b;padding:10px 0}#voiceInputRoot h3{margin-top:0}#voiceInputRoot input,#voiceInputRoot select{min-width:0}#voiceInputRoot p{line-height:1.65;white-space:pre-wrap}
+.migration-row{border-top:1px solid #395469;padding:10px 0}.migration-row input[type=checkbox]{width:auto}#migrationPanel pre{white-space:pre-wrap;overflow-wrap:anywhere}.history-session{border-left:2px solid #294254;padding-left:10px}.set-row{grid-template-columns:repeat(3,minmax(0,1fr))}.set-row>button{grid-column:1/-1}@media(max-width:500px){#migrationPanel{padding:12px}}
 </style></head><body><header><h1>SHIBA <span style="color:#00cbd4">TRAIN LOG</span></h1><small>APPLE WATCH × 筋トレ × AI ｜ 記録を、次の成長へ。</small></header><main><nav><button data-tab="dashboard" class="active">ダッシュボード</button><button data-tab="record">記録する</button><button data-tab="history">履歴</button><button data-tab="ai">AI相談</button><button data-tab="guide">使い方</button></nav>
 <section id="dashboard" class="active"><div class="grid" id="metrics"></div><div class="grid"><div class="card"><h2>部位別の実施セット数（直近7日）</h2><div id="parts"></div></div><div class="card"><h2>休養・コンディション</h2><div id="recovery"></div></div></div><div class="card"><h2>最近のトレーニング</h2><div id="recent"></div></div></section>
-<section id="record"><div class="card"><h2>トレーニングを記録</h2><p>1種目ずつ登録します。同じ日の複数種目はまとめて分析されます。</p><form id="entryForm"><div class="grid"><div><label>日付</label><input type="date" name="date" required></div><div><label>場所</label><select name="place"><option value="会社・昼トレ">会社・昼トレ</option><option value="自宅・自重">自宅・自重</option><option value="その他">その他</option></select></div><div><label>種目</label><input name="exercise" list="exercises" placeholder="例：ベンチプレス" required><datalist id="exercises"><option>ベンチプレス</option><option>スクワット</option><option>デッドリフト</option><option>ラットプルダウン</option><option>ショルダープレス</option><option>腕立て伏せ</option><option>懸垂</option><option>プランク</option></datalist></div><div><label>部位</label><select name="part"><option>胸</option><option>背中</option><option>脚</option><option>肩</option><option>腕</option><option>体幹</option><option>全身</option></select></div><div><label>重量（kg・自重なら0）</label><input type="number" name="weight" min="0" step="0.5" value="0" required></div><div><label>回数（回・秒数種目は0）</label><input type="number" name="reps" min="0" value="10" required></div><div><label>セット数</label><input type="number" name="sets" min="1" value="3" required></div><div><label>トレーニング時間（分）</label><input type="number" name="minutes" min="0" value="30" required></div><div><label>体調（1=悪い、5=良い）</label><select name="condition"><option value="1">1 悪い</option><option value="2">2 やや悪い</option><option value="3" selected>3 普通</option><option value="4">4 良い</option><option value="5">5 とても良い</option></select></div><div><label>痛み</label><select name="pain"><option value="なし">なし</option><option value="軽い">軽い</option><option value="中程度">中程度</option><option value="強い">強い</option></select></div><div><label>炎症の自覚</label><select name="inflammation"><option value="なし">なし</option><option value="あり">あり</option></select></div><div><label>Apple Watch 消費カロリー（kcal・任意）</label><input type="number" name="calories" min="0" placeholder="例：180"></div></div><label>メモ（痛む部位・種目の感想・Apple Watch記録など）</label><textarea name="memo" placeholder="例：左肩に違和感。Apple Watchの筋力トレーニングを記録。"></textarea><p class="hint">同じ日に複数種目を登録する場合、時間・消費カロリーは各種目分を入力してください。セッション全体の時間を重複入力しないでください。</p><button class="primary" type="submit">記録を保存</button> <span id="saveStatus" role="status"></span></form></div></section>
-<section id="history"><div class="card"><h2>日別・週別の記録</h2><div class="row"><label>表示方法 <select id="groupBy"><option value="day">日別</option><option value="week">週別（月曜始まり）</option></select></label><label>場所 <select id="filterPlace"><option value="all">すべて</option><option value="会社・昼トレ">会社・昼トレ</option><option value="自宅・自重">自宅・自重</option><option value="その他">その他</option></select></label></div><div id="historyList"></div></div><div class="card"><h2>データのバックアップ</h2><div class="row"><button id="export">JSON書き出し</button><button id="csv">CSV書き出し</button><label class="btn">JSON読み込み<input id="import" type="file" accept="application/json,.json" style="display:none"></label></div><p class="hint">データはこのブラウザのローカルストレージに保存されます。端末間で自動同期されません。定期的にバックアップしてください。</p></div></section>
+<section id="record"><div class="card" id="voiceInputRoot"></div><div class="card"><h2>トレーニングを記録</h2><p>1種目ずつ登録します。同じ日の複数種目はまとめて分析されます。</p><form id="entryForm"><div class="grid"><div><label>日付</label><input type="date" name="date" required></div><div><label>トレーニング時間（分）</label><input type="number" name="minutes" min="0" value="30" required><label for="sessionSelect">この日のセッション</label><select id="sessionSelect" name="sessionId"><option value="">新しいセッションを追加</option></select><p class="hint" id="sessionHint">1回のトレーニング全体の時間を入力してください。</p></div><div><label>場所</label><select name="place"><option value="会社・昼トレ">会社・昼トレ</option><option value="自宅・自重">自宅・自重</option><option value="その他">その他</option></select></div><div><label>セッション全体の体調（1=悪い、5=良い）</label><select name="condition"><option value="1">1 悪い</option><option value="2">2 やや悪い</option><option value="3" selected>3 普通</option><option value="4">4 良い</option><option value="5">5 とても良い</option></select></div><div><label>種目</label><input name="exercise" list="exercises" placeholder="例：ベンチプレス" required><datalist id="exercises"><option>ベンチプレス</option><option>スクワット</option><option>デッドリフト</option><option>ラットプルダウン</option><option>ショルダープレス</option><option>腕立て伏せ</option><option>懸垂</option><option>プランク</option></datalist></div><div><label>部位</label><select name="part"><option>胸</option><option>背中</option><option>脚</option><option>肩</option><option>腕</option><option>体幹</option><option>全身</option></select></div><div><label>Apple Watch 消費カロリー（kcal・任意）</label><input type="number" name="calories" min="0" placeholder="例：180"></div></div><fieldset><legend>セットごとの重量・回数</legend><p class="hint">1行ごとに重量・回数・セット数を入力します。同じ重量で回数が違う行も追加できます。</p><div id="setRows"></div><button type="button" id="addSet">セットを1行追加</button></fieldset><label>種目メモ（痛み・違和感・フォーム・疲労感など）</label><textarea name="memo" placeholder="例：左肩に違和感。Apple Watchの筋力トレーニングを記録。"></textarea><p class="hint">時間はセッション全体に1回だけ入力します。同じセッションに種目を追加するときは、入力済みの時間を使います。消費カロリーは各種目分を入力し、最初のセット行にだけ保存します。</p><button class="primary" type="submit">記録を保存</button> <span id="saveStatus" role="status"></span></form></div></section>
+<section id="history"><div class="card"><h2>日別・週別の記録</h2><div class="row"><label>表示方法 <select id="groupBy"><option value="day">日別</option><option value="week">週別（月曜始まり）</option></select></label><label>場所 <select id="filterPlace"><option value="all">すべて</option><option value="会社・昼トレ">会社・昼トレ</option><option value="自宅・自重">自宅・自重</option><option value="その他">その他</option></select></label></div><p class="hint">カード本体を長押しすると編集、時間の表示を長押しすると時間を編集できます。日付は新しい順で固定です。「≡」を長押しして種目カードを移動できます。移動先カードの上半分・下半分で前後を判定します。同じセッション内だけ移動できます。セッションをまたいで移動しても所属は変更しません。上下ボタンでも並べ替えできます。</p><p id="reorderStatus" role="status"></p><div class="card" id="migrationPanel"></div><div id="historyList"></div></div><div class="card"><h2>データのバックアップ</h2><div class="row"><button id="export">JSON書き出し（全情報）</button><button id="exportLegacy">旧形式JSON書き出し</button><button id="csv">CSV書き出し</button><label class="btn">JSON読み込み<input id="import" type="file" accept="application/json,.json" style="display:none"></label></div><p class="hint">データはこのブラウザのローカルストレージに保存されます。端末間で自動同期されません。定期的にバックアップしてください。</p></div></section>
 <section id="ai"><div class="card"><h2>次回トレーニング提案</h2><p>保存済みの記録をもとに、安全側のルールで次回の候補を作ります。AI APIを使わなくても利用できます。</p><div class="row"><label>予定場所 <select id="nextPlace"><option value="会社・昼トレ">会社・昼トレ</option><option value="自宅・自重">自宅・自重</option></select></label><label>予定時間 <select id="nextMinutes"><option value="20">20分</option><option value="30" selected>30分</option><option value="45">45分</option></select></label></div><div id="localAdvice" class="entry" aria-live="polite"></div><button id="suggest" class="primary">履歴から次回メニューを作成</button></div><div class="card"><h2>ChatGPTモデルで詳しく分析</h2><p>OpenAI APIを設定した専用サーバー経由で分析します。APIキーはブラウザに入力・保存しません。</p><div class="row"><button id="askAI" class="primary">AIに分析・提案してもらう</button></div><p id="aiStatus" role="status" class="hint"></p><div id="aiResult" class="entry" style="white-space:pre-wrap;line-height:1.7"></div><p class="hint">静的HTMLのみで開いた場合はAI APIを利用できません。付属のサーバーを設定して公開してください。痛み・炎症を含む直近28日分の記録がAIサービスに送信されます。</p></div><div class="card"><h2>AIに相談するための要約</h2><p>直近14日間の記録をまとめます。内容を確認してChatGPTに貼り付けてください。下の要約は手動コピー用です。AI分析ボタンを押した場合のみ、専用サーバーからAIに送信します。</p><textarea id="summary" rows="18" style="min-height:330px"></textarea><div class="row"><button class="primary" id="copy">要約をコピー</button><button id="refresh">要約を更新</button></div><p class="hint">痛み・体調などの情報が含まれます。共有する前に個人情報を確認してください。AIの助言は医療診断ではありません。</p></div></section>
 <section id="guide"><div class="card"><h2>はじめての使い方</h2><ol><li>「記録する」で会社の昼トレまたは自宅の自重トレを選び、種目を入力。</li><li>Apple Watchのワークアウト終了後に、運動時間と消費カロリーを確認して転記。</li><li>ダッシュボードで重量×回数×セット数、前回比、部位別セット数を確認。</li><li>「履歴」で日別・週別の傾向を確認。</li><li>「AI相談」で次回メニューを自動提案。詳しい分析はChatGPTモデルに相談するか、要約をコピーしてChatGPTに貼り付けます。</li></ol><h2>note向け実践例</h2><p>月曜日は会社でベンチプレス、火曜日は自宅で腕立て伏せ。Apple Watchの運動時間を追記して、週末にAIへ「肩の痛みに配慮しながら来週の負荷を考えて」と相談する流れを紹介できます。</p><div class="row"><button id="sample" class="primary">サンプルデータを追加</button><button id="clear">全データを削除</button></div><p class="hint">サンプルは架空の記録です。重複追加を防ぐため、同じサンプルIDは一度だけ登録します。削除は取り消せません。</p><h2>計算上の注意</h2><p>総ボリューム＝外部重量(kg)×回数×セット数。自重種目は外部重量0kgとして集計し、セット数で別途評価します。前回比は同じ種目の直前の記録と比較します。連続日数は記録のある暦日の連続数です。休養の偏りは部位ごとの最終実施日からの経過日数を目安として示します。痛みや炎症が続く場合は無理に運動せず専門家に相談してください。</p></div></section>
-</main><footer>SHIBA TRAIN LOG · ローカル保存型デモアプリ</footer><script>
+</main><footer>SHIBA TRAIN LOG · ローカル保存型デモアプリ</footer><script src="training-data.js"></script><script src="session-app.js"></script><script src="voice-input.js"></script><script src="voice-ui.js"></script><script>
 const KEY='shiba-train-log-v1';let records=[];const $=id=>document.getElementById(id);const today=()=>new Date().toLocaleDateString('sv-SE');const num=v=>Number(v)||0;const fmt=n=>Number(n).toLocaleString('ja-JP',{maximumFractionDigits:1});const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));const dateNum=s=>new Date(s+'T12:00:00').getTime();const dayDiff=(a,b)=>Math.round((dateNum(a)-dateNum(b))/86400000);const isoWeek=s=>{let d=new Date(s+'T12:00:00'),w=(d.getDay()+6)%7;d.setDate(d.getDate()-w);return d.toLocaleDateString('sv-SE')};const volume=r=>num(r.weight)*num(r.reps)*num(r.sets);const valid=r=>r&&validDate(r.date)&&typeof r.exercise==='string'&&r.exercise.trim()&&['胸','背中','脚','肩','腕','体幹','全身'].includes(r.part)&&['会社・昼トレ','自宅・自重','その他'].includes(r.place)&&['なし','軽い','中程度','強い'].includes(r.pain)&&['なし','あり'].includes(r.inflammation)&&['weight','reps','sets','minutes','calories','condition'].every(k=>Number.isFinite(Number(r[k]))&&Number(r[k])>=0)&&num(r.sets)>=1&&num(r.condition)>=1&&num(r.condition)<=5;
 // Check the actual calendar date, without Date's automatic overflow correction.
 function validDate(value){
@@ -41,17 +46,410 @@ function normalizeIds(data){
     seen.add(id);return {...r,id};
   });
 }
-function load(){try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');records=Array.isArray(x)?normalizeIds(x.filter(valid)):[]}catch{records=[]}}
-function save(next=records){try{localStorage.setItem(KEY,JSON.stringify(next));return true}catch{alert('保存に失敗しました。変更前のデータを保持しています。ブラウザの保存領域をご確認ください。');return false}}
+let sessionApp=null;
+function load(){if(sessionApp){records=sessionApp.loadRows();return}try{const x=JSON.parse(localStorage.getItem(KEY)||'[]');records=Array.isArray(x)?normalizeIds(x.filter(valid)):[]}catch{records=[]}}
+function save(next=records){if(sessionApp)return sessionApp.writeRows(next);if(globalThis.window){alert('保存機能のファイルを読み込めていないため、既存データを保護して保存を停止しました。');return false}try{localStorage.setItem(KEY,JSON.stringify(next));return true}catch{alert('保存に失敗しました。変更前のデータを保持しています。ブラウザの保存領域をご確認ください。');return false}}
 // Publish changes to memory and the screen only after durable storage succeeds.
-function commitRecords(next){if(!save(next))return false;records=next;render();return true}
-function sorted(){return [...records].sort((a,b)=>b.date.localeCompare(a.date)||String(b.id).localeCompare(String(a.id)))}function render(){const r=sorted(),days=[...new Set(r.map(x=>x.date))].sort().reverse(),now=today(),week=r.filter(x=>dayDiff(now,x.date)>=0&&dayDiff(now,x.date)<7),prev=r.filter(x=>dayDiff(now,x.date)>=7&&dayDiff(now,x.date)<14),v=week.reduce((a,x)=>a+volume(x),0),pv=prev.reduce((a,x)=>a+volume(x),0);let streak=0;let cursor=now;if(!days.includes(cursor)){const d=new Date(now+'T12:00:00');d.setDate(d.getDate()-1);cursor=d.toLocaleDateString('sv-SE')}while(days.includes(cursor)){streak++;const d=new Date(cursor+'T12:00:00');d.setDate(d.getDate()-1);cursor=d.toLocaleDateString('sv-SE')}const metrics=[['直近7日の総ボリューム',fmt(v)+' kg'],['前の7日間との比較',pv?((v-pv)/pv*100>=0?'+':'')+fmt((v-pv)/pv*100)+'%':'比較対象なし'],['継続日数',streak+' 日'],['直近7日の運動日数',new Set(week.map(x=>x.date)).size+' 日']];$('metrics').innerHTML=metrics.map(([a,b])=>`<div class="card"><small>${a}</small><div class="metric">${b}</div></div>`).join('');const parts=['胸','背中','脚','肩','腕','体幹','全身'],counts=parts.map(p=>week.filter(x=>x.part===p).reduce((a,x)=>a+num(x.sets),0)),max=Math.max(1,...counts);$('parts').innerHTML=parts.map((p,i)=>`<div class="chartrow"><span>${p}</span><div class="bar"><i style="width:${counts[i]/max*100}%"></i></div><b>${counts[i]}</b></div>`).join('');const flagged=week.filter(x=>x.pain!=='なし'||x.inflammation==='あり');$('recovery').innerHTML=`<p>直近7日：痛み・炎症の記録 <strong>${flagged.length} 件</strong></p>`+parts.map(p=>{const x=r.find(x=>x.part===p&&dayDiff(now,x.date)>=0);return `<p>${p}：${x?dayDiff(now,x.date)+'日前':'記録なし'} ${x&&dayDiff(now,x.date)===0?'<span class="tag">本日実施</span>':''}</p>`}).join('')+'<small>実施間隔の目安であり、回復状態の医学的判定ではありません。</small>';$('recent').innerHTML=r.length?r.slice(0,6).map(x=>`<div class="entry"><strong>${esc(x.date)} · ${esc(x.exercise)}</strong> <span class="tag">${esc(x.place)}</span><div class="muted">${fmt(x.weight)}kg × ${fmt(x.reps)}回 × ${fmt(x.sets)}セット ／ ${fmt(x.minutes)}分</div></div>`).join(''):'<p>記録がありません。「使い方」からサンプルを追加できます。</p>';renderHistory();renderAI();buildLocalAdvice()}
-function renderHistory(){const groups={};const group=$('groupBy').value;sorted().filter(x=>$('filterPlace').value==='all'||x.place===$('filterPlace').value).forEach(x=>{const k=group==='day'?x.date:isoWeek(x.date)+' の週';(groups[k]??=[]).push(x)});$('historyList').innerHTML=Object.entries(groups).map(([k,items])=>`<div class="entry"><h3>${esc(k)} <small>${items.length}種目・${fmt(items.reduce((a,x)=>a+volume(x),0))}kg</small></h3><div class="scroll"><table><tr><th>日付</th><th>場所 / 種目</th><th>重量</th><th>回数</th><th>セット</th><th>時間</th><th>状態</th><th></th></tr>${items.map(x=>`<tr><td>${esc(x.date)}</td><td>${esc(x.place)}<br>${esc(x.exercise)} <small>${esc(x.part)}</small></td><td>${fmt(x.weight)}kg</td><td>${fmt(x.reps)}</td><td>${fmt(x.sets)}</td><td>${fmt(x.minutes)}分</td><td>体調${fmt(x.condition)} / 痛み${esc(x.pain)} / 炎症${esc(x.inflammation)}<br><small>${esc(x.memo)}</small></td><td><button data-delete="${esc(x.id)}">削除</button></td></tr>`).join('')}</table></div></div>`).join('')||'<p>該当する記録はありません。</p>'}
-function renderAI(){const r=sorted(),now=today(),recent=r.filter(x=>dayDiff(now,x.date)>=0&&dayDiff(now,x.date)<14),previous=r.filter(x=>dayDiff(now,x.date)>=14&&dayDiff(now,x.date)<28);const lines=['以下は私の筋トレ記録です。初心者〜中級者にもわかる言葉で、負荷の推移、部位の偏り、休養、痛み・炎症への配慮を分析し、次の1週間の無理のない計画を提案してください。診断はしないでください。','',`集計日：${now} / 直近14日：${recent.length}種目、${new Set(recent.map(x=>x.date)).size}運動日`,`外部重量ボリューム：${fmt(recent.reduce((a,x)=>a+volume(x),0))}kg（前の14日：${fmt(previous.reduce((a,x)=>a+volume(x),0))}kg）`,'','【記録】'];for(const x of recent) {const older=r.filter(y=>y.exercise===x.exercise&&dateNum(y.date)<dateNum(x.date));const prior=older[0];const change=prior&&volume(prior)>0?` / 同種目前回比 ${fmt((volume(x)/volume(prior)-1)*100)}%`:'';lines.push(`${x.date}｜${x.place}｜${x.exercise}（${x.part}）｜${x.weight}kg × ${x.reps}回 × ${x.sets}セット｜${x.minutes}分｜体調${x.condition}/5｜痛み:${x.pain}｜炎症:${x.inflammation}｜Watch消費:${x.calories||'未記録'}kcal${change}${x.memo?'｜メモ:'+x.memo:''}`)}if(!recent.length)lines.push('直近14日の記録なし');lines.push('','【確認したいこと】','1. 部位別の運動量や休養間隔に偏りはあるか？','2. 痛みや炎症のある日はどのように負荷を調整すべきか？','3. 会社の昼トレと自宅トレを組み合わせた来週の現実的な計画は？','※自重種目の外部重量は0kgとしており、総ボリュームに含まれません。');$('summary').value=lines.join('\n')}
-function buildLocalAdvice(){const now=today(),recent=sorted().filter(r=>dayDiff(now,r.date)>=0&&dayDiff(now,r.date)<14),last=sorted()[0],place=$('nextPlace').value,mins=Number($('nextMinutes').value),parts=['胸','背中','脚','肩','腕','体幹'],counts=Object.fromEntries(parts.map(p=>[p,recent.filter(r=>r.part===p).reduce((n,r)=>n+num(r.sets),0)])),flag=recent.filter(r=>r.pain!=='なし'||r.inflammation==='あり'),latest=sorted().filter(r=>dayDiff(now,r.date)>=0&&dayDiff(now,r.date)<=3),caution=latest.some(r=>r.pain==='中程度'||r.pain==='強い'||r.inflammation==='あり'),avg=recent.length?recent.reduce((n,r)=>n+num(r.condition),0)/recent.length:0;let lines=[];if(!recent.length){lines.push('記録がまだありません。まずは数回記録すると、部位や負荷に合わせた提案ができます。');}else{lines.push('直近14日：'+recent.length+'種目 / '+new Set(recent.map(r=>r.date)).size+'運動日 / 外部重量 '+fmt(recent.reduce((n,r)=>n+volume(r),0))+'kg');lines.push('部位別セット数：'+parts.map(p=>p+counts[p]).join('、'));lines.push('平均体調：'+fmt(avg)+'/5、痛み・炎症の記録：'+flag.length+'件');}if(caution){lines.push('【優先】直近3日以内に中程度以上の痛み、または炎症の記録があります。症状のある部位を負荷にさらすメニューは提案しません。休養・軽い動作確認を優先し、持続・悪化する症状は医療専門家に相談してください。');lines.push('候補：休養または痛みのない範囲での軽い歩行・ストレッチ（'+Math.min(mins,20)+'分以内）。');}else{const lastByPart=Object.fromEntries(parts.map(p=>[p,sorted().find(r=>r.part===p)]));const eligible=parts.filter(p=>!lastByPart[p]||dayDiff(now,lastByPart[p].date)>=2).sort((a,b)=>counts[a]-counts[b]);if(!eligible.length)lines.push('直近48時間以内に各部位の実施記録があります。今日は休養や軽い活動を検討してください。');else{const chosen=eligible.slice(0,2);lines.push('次回候補：'+chosen.join('・')+'（直近の実施頻度と約48時間の間隔を参考に選択）');const company={'胸':['チェストプレス','軽めのベンチプレス'],'背中':['ラットプルダウン','シーテッドロー'],'脚':['軽めのスクワット','レッグプレス'],'肩':['軽めのサイドレイズ'],'腕':['アームカール','ケーブルプレスダウン'],'体幹':['プランク']},home={'胸':['壁腕立て・腕立て伏せ'],'背中':['タオルローイング（安全な姿勢で）'],'脚':['自重スクワット'],'肩':['肩の痛みがない範囲での軽い運動'],'腕':['膝つき腕立て伏せ'],'体幹':['プランク']};for(const p of chosen){const ex=(place==='会社・昼トレ'?company:home)[p][0];const prev=sorted().find(r=>r.part===p&&r.place===place&&r.weight>0);lines.push('・'+ex+'：2〜3セット × 8〜12回'+(prev?'（過去の参考重量 '+fmt(prev.weight)+'kg。増量せず余裕のある負荷から）':'（痛みのない軽い負荷から）'));}lines.push('目安：'+mins+'分（準備運動を含む）。強い疲労や痛みが出たら中止。');}}$('localAdvice').textContent=lines.join('\n');return lines.join('\n')}
+function commitRecords(next){if(!save(next))return false;records=sessionApp?sessionApp.rows():next;render();return true}
+// Independent daily active-energy totals; never derived from training records.
+// A native provider must return one cumulative kcal total per local date for
+// [start, end], using active energy only (not basal energy or workout-only data).
+const localDay=date=>new Date(date).toLocaleDateString('sv-SE');
+function energyPeriod(now=new Date(),days=1){
+  const end=new Date(now),start=new Date(now);
+  start.setHours(0,0,0,0);start.setDate(start.getDate()-days+1);
+  return {start,end};
+}
+const energyProviders={
+  disconnected:{async readDailyTotals(){return []}},
+  sample:{async readDailyTotals({start,end}){
+    const totals=[];
+    for(const date=new Date(start);date<=end;date.setDate(date.getDate()+1)){
+      totals.push({date:localDay(date),kcal:420});
+    }
+    return totals;
+  }}
+};
+let energyProvider=energyProviders.disconnected,energyRequest=0;
+function energyValue(totals,date){
+  const rows=Array.isArray(totals)?totals.filter(row=>row?.date===date):[];
+  return rows.length===1&&typeof rows[0].kcal==='number'&&Number.isFinite(rows[0].kcal)&&rows[0].kcal>=0?rows[0].kcal:null;
+}
+function energyCard(){return `<small>本日のアクティブ消費カロリー</small>
+  <div class="metric" id="activeEnergyValue" role="status">未連携</div>
+  <p class="hint" id="activeEnergySource">HealthKit未連携（Web版では自動取得できません）</p>
+  <p class="hint">ムーブリング相当：歩行・日常活動を含み、安静時は除外。端末の本日0時〜現在。</p>
+  <button type="button" id="energySample">${energyProvider===energyProviders.sample?'サンプルを終了':'サンプルを表示'}</button>`}
+async function refreshActiveEnergy(now=new Date()){
+  const request=++energyRequest,provider=energyProvider,period=energyPeriod(now);
+  let kcal=null;
+  try{kcal=energyValue(await provider.readDailyTotals(period),localDay(period.end))}catch{}
+  if(request!==energyRequest)return;
+  const value=$('activeEnergyValue'),source=$('activeEnergySource');
+  if(!value||!source)return;
+  value.textContent=kcal===null?'未連携':fmt(kcal)+' kcal';
+  source.textContent=provider===energyProviders.sample?
+    'サンプルデータ（動作確認用・実測値ではありません）':
+    'HealthKit未連携（Web版では自動取得できません）';
+}
+
+// Optional historyOrder metadata keeps the original record-array backup format.
+function historySorted(data=records){return [...data].sort((a,b)=>b.date.localeCompare(a.date)||(Number.isFinite(a.historyOrder)?a.historyOrder:Number.MAX_SAFE_INTEGER)-(Number.isFinite(b.historyOrder)?b.historyOrder:Number.MAX_SAFE_INTEGER)||String(b.id).localeCompare(String(a.id)))}
+function reorderedRecords(sourceId,targetId,position=null){
+ const source=records.find(r=>r.id===sourceId),target=records.find(r=>r.id===targetId);
+ if(!source||!target||source.date!==target.date||sourceId===targetId)return null;
+ const day=historySorted().filter(r=>r.date===source.date),from=day.findIndex(r=>r.id===sourceId),to=day.findIndex(r=>r.id===targetId);
+ const [moved]=day.splice(from,1);
+ const insert=position===null?to:day.findIndex(r=>r.id===targetId)+(position==='after'?1:0);
+ day.splice(insert,0,moved);
+ const ranks=new Map(day.map((r,i)=>[r.id,i]));
+ return records.map(r=>ranks.has(r.id)?{...r,historyOrder:ranks.get(r.id)}:r);
+}
+// Cards are a view over the original records; no records are merged or re-keyed.
+function historyCards(data=records){
+ const groups=new Map();
+ for(const record of historySorted(data)){
+ const key=JSON.stringify(sessionApp?[record.date,record.migrationPending?'pending:'+record.id:record.sessionId,record.exercise]:[record.date,record.place,record.exercise,record.part]);
+ if(!groups.has(key))groups.set(key,{date:record.date,place:record.place,sessionId:record.sessionId,pending:!!record.migrationPending,memo:record.memo||'',exercise:record.exercise,part:record.part,rows:[]});
+ groups.get(key).rows.push(record);
+ }
+ return [...groups.values()].map(card=>({...card,id:card.rows.map(r=>r.id).sort()[0]}));
+}
+function reorderedCards(sourceId,targetId,position=null){
+ const cards=historyCards(),source=cards.find(c=>c.id===sourceId),target=cards.find(c=>c.id===targetId);
+ if(!source||!target||source.date!==target.date||sourceId===targetId)return null;
+ if(sessionApp&&(source.pending||target.pending||source.sessionId!==target.sessionId))return null;
+ const day=cards.filter(c=>c.date===source.date),from=day.indexOf(source),to=day.indexOf(target);
+ day.splice(from,1);const index=position===null?to:day.indexOf(target)+(position==='after'?1:0);day.splice(index,0,source);
+ const ranks=new Map(day.flatMap(c=>c.rows).map((r,i)=>[r.id,i]));
+ return records.map(r=>ranks.has(r.id)?{...r,historyOrder:ranks.get(r.id)}:r);
+}
+function sessionTimeNotes(date){
+ const notes=[];
+ for(const session of sessionsForDate(date)){
+ const rows=records.filter(r=>r.date===date&&hasSession(r)&&r.sessionId===session.id);
+ if(new Set(rows.map(r=>r.sessionMinutes)).size>1)notes.push('同じセッション内で保存された時間が一致していません。現在は先頭の記録の時間で集計しています。JSONを確認してください。');
+ const positive=rows.filter(r=>num(r.minutes)>0);
+ if(positive.length>1)notes.push(`旧記録の入力内訳：${positive.map(r=>fmt(r.minutes)).join('＋')}分。保存済みセッション時間は${fmt(session.minutes)}分です。元の入力が重複していたかは判定できないため、時間は変更していません。`);
+ }
+ return notes;
+}
+let historyEditor=null;
+function editedCardRecords(cardId,draft){
+ if(sessionApp)return sessionApp.editCard(cardId,draft);
+ const card=historyCards().find(c=>c.id===cardId);if(!card)throw Error('編集する種目が見つかりません。');
+ if(!draft.exercise?.trim()||!draft.rows.length)throw Error('種目名と1行以上のセットを入力してください。');
+ const originals=new Map(card.rows.map(r=>[r.id,r])),seen=new Set(),used=new Set(records.flatMap(r=>[r.id,r.sessionId]).filter(validId));
+ const rows=draft.rows.map(row=>{
+ if(row.id&&(!originals.has(row.id)||seen.has(row.id)))throw Error('記録IDが一致しません。');
+ if(row.id)seen.add(row.id);
+ const original=row.id?originals.get(row.id):card.rows[0];
+ const sessionId=row.id?original.sessionId:row.sessionId;
+ const session=records.find(r=>r.date===card.date&&hasSession(r)&&r.sessionId===sessionId);
+ if(!row.id&&sessionId&&!session)throw Error('追加先のセッションを確認してください。');
+ for(const key of ['weight','reps','sets','condition'])if(row[key]===''||!Number.isFinite(Number(row[key])))throw Error('重量・回数・セット数・体調を確認してください。');
+ let id=row.id;if(!id){id=createRecordId(used);used.add(id)}
+ const next={...original,id,exercise:draft.exercise.trim(),part:draft.part,weight:Number(row.weight),reps:Number(row.reps),sets:Number(row.sets),condition:Number(row.condition),pain:row.pain,inflammation:row.inflammation,memo:row.memo};
+ if(!row.id){next.minutes=0;next.calories=0;if(session){next.sessionId=session.sessionId;next.sessionMinutes=session.sessionMinutes}}
+ if(!valid(next)||!Number.isInteger(next.sets)||!Number.isInteger(next.reps))throw Error('入力内容を確認してください。回数・セット数は整数で入力します。');
+ return next;
+ });
+ const replacement=new Map(rows.filter(r=>originals.has(r.id)).map(r=>[r.id,r]));
+ const next=records.filter(r=>!originals.has(r.id)||replacement.has(r.id)).map(r=>replacement.get(r.id)??r);
+ next.push(...rows.filter(r=>!originals.has(r.id)));
+ const order=historyCards().filter(c=>c.date===card.date).flatMap(c=>c.id===cardId?rows:c.rows),ranks=new Map(order.map((r,i)=>[r.id,i]));
+ return next.map(r=>ranks.has(r.id)?{...r,historyOrder:ranks.get(r.id)}:r);
+}
+function timeDraftForDate(date){
+ if(sessionApp)return sessionApp.sessions(date);
+ const sessions=sessionsForDate(date).map(s=>({...s})),legacy=records.filter(r=>r.date===date&&!hasSession(r));
+ if(legacy.length)sessions.push({id:'',minutes:legacy.reduce((n,r)=>n+num(r.minutes),0)});
+ return sessions;
+}
+function editedTimeRecords(date,changes){
+ if(sessionApp)return sessionApp.editSessions(date,changes);
+ const sessions=timeDraftForDate(date);if(!sessions.length||changes.length!==sessions.length)throw Error('セッションを確認してください。');
+ const seen=new Set(),updates=new Map(),used=new Set(records.flatMap(r=>[r.id,r.sessionId]).filter(validId));
+ for(const change of changes){
+ const existing=sessions.find(s=>s.id===change.id);
+ if(!existing||seen.has(change.id)||change.minutes===''||!Number.isFinite(Number(change.minutes))||Number(change.minutes)<0)throw Error('時間は0以上の数値で入力してください。');
+ seen.add(change.id);
+ const members=records.filter(r=>r.date===date&&(change.id?hasSession(r)&&r.sessionId===change.id:!hasSession(r)));
+ if(Number(change.minutes)===existing.minutes&&members.every(r=>!hasSession(r)||r.sessionMinutes===existing.minutes))continue;
+ const id=change.id||createRecordId(used);used.add(id);
+ members.forEach((r,i)=>updates.set(r.id,{...r,sessionId:id,sessionMinutes:Number(change.minutes),minutes:i===0?Number(change.minutes):0}));
+ }
+ return records.map(r=>updates.get(r.id)??r);
+}
+function edgeScrollSpeed(y,height){
+ const edge=Math.min(90,height/4),max=420;
+ return y<edge?-max*Math.min(1,(edge-y)/edge):y>height-edge?max*Math.min(1,(y-height+edge)/edge):0;
+}
+function editOptions(values,current){return values.map(v=>`<option value="${esc(v)}"${String(v)===String(current)?' selected':''}>${esc(v)}</option>`).join('')}
+function renderCardEditor(card){
+ const draft=historyEditor.draft;
+ return `<form data-history-editor><h4>履歴を編集</h4><label>種目名<input data-edit-field="exercise" value="${esc(draft.exercise)}" required></label><label>部位<select data-edit-field="part">${editOptions(['胸','背中','脚','肩','腕','体幹','全身'],draft.part)}</select></label>${draft.rows.map((r,i)=>`<fieldset data-edit-row="${i}"><legend>${i+1}行目</legend><div class="edit-number-grid">${[['weight','重量（kg）',0,'any'],['reps','回数',0,1],['sets','セット数',1,1]].map(([key,label,min,step])=>`<label>${label}<input type="number" data-row-field="${key}" min="${min}" step="${step}" value="${esc(r[key])}" required></label>`).join('')}</div><label>体調<select data-row-field="condition">${editOptions([1,2,3,4,5],r.condition)}</select></label><label>痛み<select data-row-field="pain">${editOptions(['なし','軽い','中程度','強い'],r.pain)}</select></label><label>炎症<select data-row-field="inflammation">${editOptions(['なし','あり'],r.inflammation)}</select></label><label>メモ<textarea data-row-field="memo">${esc(r.memo)}</textarea></label>${!r.id?`<label>追加先セッション<select data-row-field="sessionId">${sessionsForDate(card.date).map((s,index)=>`<option value="${esc(s.id)}"${s.id===r.sessionId?' selected':''}>セッション${index+1}</option>`).join('')}</select></label>`:''}<button type="button" data-edit-remove="${i}">この入力行を削除</button></fieldset>`).join('')}<button type="button" data-edit-add>行を追加</button><p data-editor-error role="status" class="danger">${esc(historyEditor.error||'')}</p><div class="row"><button class="primary" type="submit">保存</button><button type="button" data-edit-cancel>キャンセル</button></div></form>`;
+}
+function renderHistoryTime(date){
+ // The three-level renderer owns the session information in the current app.
+ const editing=historyEditor?.kind==='time'&&historyEditor.date===date;
+ return `<div class="history-time${editing?' editing':''}" data-time-date="${esc(date)}">${editing?`<form data-history-editor><h4>セッション時間を編集</h4><p class="hint">同じセッションの全場所・全種目に反映します。複数セッションはそれぞれ入力してください。</p>${historyEditor.draft.map((s,i)=>`<label>セッション${i+1}（分）<input type="number" min="0" step="any" data-time-index="${i}" value="${esc(s.minutes)}" required></label>`).join('')}<p data-editor-error role="status" class="danger">${esc(historyEditor.error||'')}</p><div class="row"><button class="primary" type="submit">保存</button><button type="button" data-edit-cancel>キャンセル</button></div></form>`:`<strong>運動時間 ${fmt(dailyMinutes(date))}分</strong><small>（全場所・セッションごとに1回集計）</small><div>${sessionsForDate(date).map((s,i)=>`<span class="tag">セッション${i+1}：${fmt(s.minutes)}分</span>`).join('')}</div>${sessionTimeNotes(date).map(note=>`<p class="hint">${esc(note)}</p>`).join('')}<button type="button" data-time-edit="${esc(date)}">時間を編集</button>`}</div>`;
+}
+function openHistoryEditor(kind,key){
+ if(historyEditor){$('reorderStatus').textContent='編集中の内容を保存またはキャンセルしてください。';return}
+ clearHistoryDrag();
+ if(kind==='card'){
+ const card=historyCards().find(c=>c.id===key);if(!card)return;
+ if(sessionApp&&card.pending){$('reorderStatus').textContent='旧記録は移行確認後に編集できます。';return}
+ historyEditor={kind,id:key,snapshot:JSON.stringify(card.rows),draft:{exercise:card.exercise,part:card.part,memo:card.memo||'',rows:card.rows.map(r=>({...r}))}};
+ }else{const draft=timeDraftForDate(key);if(!draft.length)return;historyEditor={kind:'time',date:key,draft}}
+ renderHistory();
+}
+function finishHistoryEdit(){
+ if(!historyEditor)return false;
+ try{
+ if(historyEditor.kind==='card'&&historyEditor.snapshot!==JSON.stringify(historyCards().find(c=>c.id===historyEditor.id)?.rows))throw Error('編集中に記録が変わりました。キャンセルして開き直してください。');
+ const next=historyEditor.kind==='card'?editedCardRecords(historyEditor.id,historyEditor.draft):editedTimeRecords(historyEditor.date,historyEditor.draft);
+ if(!commitRecords(next)){historyEditor.error='保存できませんでした。入力内容を残しています。';return false}
+ historyEditor=null;renderHistory();selectLatestSession();return true;
+ }catch(error){historyEditor.error=error.message;return false}
+}
+function buildSetRecords(fields,rows){
+ if(sessionApp)return sessionApp.buildSets(fields,rows);
+ if(!rows.length)throw Error('セットを1行以上入力してください。');
+ if(rows.some(r=>r.weight===''||r.reps===''||!Number.isFinite(Number(r.weight))||!Number.isFinite(Number(r.reps))||Number(r.weight)<0||Number(r.reps)<0))throw Error('重量と回数を確認してください。');
+ const used=new Set(records.flatMap(r=>[r.id,r.sessionId]).filter(validId));
+ const existing=fields.sessionId?records.find(r=>r.date===fields.date&&hasSession(r)&&r.sessionId===fields.sessionId):null;
+ if(fields.sessionId&&!existing)throw Error('セッションを選び直してください。');
+ const sessionId=existing?existing.sessionId:createRecordId(used);used.add(sessionId);
+ const sessionMinutes=existing?existing.sessionMinutes:Number(fields.minutes);
+ if(!Number.isFinite(sessionMinutes)||sessionMinutes<0)throw Error('セッション時間を確認してください。');
+ const day=historySorted().filter(r=>r.date===fields.date),ranks=new Map(day.map((r,i)=>[r.id,i]));
+ const additions=rows.map((row,i)=>{
+ const id=createRecordId(used);used.add(id);
+ return {...fields,id,sessionId,sessionMinutes,weight:Number(row.weight),reps:Number(row.reps),sets:1,minutes:!existing&&i===0?sessionMinutes:0,calories:i===0?num(fields.calories):0,condition:num(fields.condition),historyOrder:day.length+i};
+ });
+ if(!additions.every(valid))throw Error('入力内容を確認してください。');
+ return [...records.map(r=>ranks.has(r.id)?{...r,historyOrder:ranks.get(r.id)}:r),...additions];
+}
+function hasSession(record){return validId(record.sessionId)&&typeof record.sessionMinutes==='number'&&Number.isFinite(record.sessionMinutes)&&record.sessionMinutes>=0}
+// Keep every original field (including minutes); add daily session metadata only.
+function withLegacySessions(data){
+ const legacy=data.filter(r=>!hasSession(r));if(!legacy.length)return data;
+ const used=new Set(data.flatMap(r=>[r.id,r.sessionId]).filter(validId)),days=new Map();
+ for(const record of legacy){
+ if(!days.has(record.date)){const id=createRecordId(used);used.add(id);days.set(record.date,{id,minutes:0})}
+ const session=days.get(record.date);session.minutes+=num(record.minutes);
+ if(!Number.isFinite(session.minutes))throw Error('旧記録の時間を合算できません。');
+ }
+ return data.map(r=>hasSession(r)?r:{...r,sessionId:days.get(r.date).id,sessionMinutes:days.get(r.date).minutes});
+}
+function upgradeLegacySessions(){
+ if(sessionApp||globalThis.window)return true;
+ try{const next=withLegacySessions(records);return next===records||commitRecords(next)}
+ catch(error){alert('既存の記録をそのまま保持しています。'+error.message);return false}
+}
+function sessionsForDate(date,data=records){
+ if(sessionApp&&data===records)return sessionApp.sessions(date);
+ const sessions=new Map();
+ data.filter(r=>r.date===date&&hasSession(r)).forEach(r=>{
+ if(!sessions.has(r.sessionId))sessions.set(r.sessionId,{id:r.sessionId,minutes:r.sessionMinutes});
+ });
+ return [...sessions.values()];
+}
+function dailyMinutes(date,data=records){
+ if(sessionApp&&data===records)return sessionApp.sessions(date).reduce((n,s)=>n+s.minutes,0);
+ return sessionsForDate(date,data).reduce((total,s)=>total+s.minutes,0)+data.filter(r=>r.date===date&&!hasSession(r)).reduce((total,r)=>total+num(r.minutes),0);
+}
+function refreshSessionInput(selected=null){
+ const form=$('entryForm'),date=form.querySelector('[name=date]').value,select=$('sessionSelect'),input=form.querySelector('[name=minutes]');
+ const sessions=sessionsForDate(date),current=selected??select.value;
+ select.innerHTML='<option value="">新しいセッションを追加</option>'+sessions.map((s,i)=>`<option value="${esc(s.id)}">セッション${i+1}（${fmt(s.minutes)}分）</option>`).join('');
+ select.value=sessions.some(s=>s.id===current)?current:'';
+ const existing=sessions.find(s=>s.id===select.value);
+ input.readOnly=!!existing;
+ if(sessionApp){const condition=form.querySelector('[name=condition]'),place=form.querySelector('[name=place]');condition.disabled=!!existing;place.disabled=!!existing;if(existing){condition.value=existing.condition;place.value=existing.place}}
+ if(existing)input.value=existing.minutes;
+ $('sessionHint').textContent=existing?'このセッションの時間は入力済みです。追加の種目・セットには重複加算しません。':'朝・夜など、1回のトレーニング全体の時間を1度だけ入力してください。';
+}
+function selectLatestSession(){
+ const date=$('entryForm').querySelector('[name=date]').value;
+ refreshSessionInput(sessionsForDate(date).slice(-1)[0]?.id??'');
+}
+function addSetRow(weight=0,reps=10){
+ const row=document.createElement('div');row.className='set-row';
+ row.innerHTML='<label>重量（kg）<input data-weight type="number" min="0" step="0.5" required></label><label>回数（秒数種目は0）<input data-reps type="number" min="0" required></label><label>セット数<input data-sets type="number" min="1" step="1" value="1" required></label><button type="button" data-remove-set>削除</button>';
+ row.querySelector('[data-weight]').value=weight;row.querySelector('[data-reps]').value=reps;$('setRows').append(row);
+}
+
+function sorted(){return [...records].sort((a,b)=>b.date.localeCompare(a.date)||String(b.id).localeCompare(String(a.id)))}function render(){const r=sorted(),days=[...new Set(r.map(x=>x.date))].sort().reverse(),now=today(),week=r.filter(x=>dayDiff(now,x.date)>=0&&dayDiff(now,x.date)<7),prev=r.filter(x=>dayDiff(now,x.date)>=7&&dayDiff(now,x.date)<14),v=week.reduce((a,x)=>a+volume(x),0),pv=prev.reduce((a,x)=>a+volume(x),0);let streak=0;let cursor=now;if(!days.includes(cursor)){const d=new Date(now+'T12:00:00');d.setDate(d.getDate()-1);cursor=d.toLocaleDateString('sv-SE')}while(days.includes(cursor)){streak++;const d=new Date(cursor+'T12:00:00');d.setDate(d.getDate()-1);cursor=d.toLocaleDateString('sv-SE')}const metrics=[['本日のアクティブ消費カロリー',null],['前の7日間との比較',pv?((v-pv)/pv*100>=0?'+':'')+fmt((v-pv)/pv*100)+'%':'比較対象なし'],['継続日数',streak+' 日'],['直近7日の運動日数',new Set(week.map(x=>x.date)).size+' 日']];$('metrics').innerHTML=metrics.map(([a,b],i)=>`<div class="card">${i===0?energyCard():`<small>${a}</small><div class="metric">${b}</div>`}</div>`).join('');refreshActiveEnergy();const parts=['胸','背中','脚','肩','腕','体幹','全身'],counts=parts.map(p=>week.filter(x=>x.part===p).reduce((a,x)=>a+num(x.sets),0)),max=Math.max(1,...counts);$('parts').innerHTML=parts.map((p,i)=>`<div class="chartrow"><span>${p}</span><div class="bar"><i style="width:${counts[i]/max*100}%"></i></div><b>${counts[i]}</b></div>`).join('');const flagged=week.filter(x=>x.pain!=='なし'||x.inflammation==='あり'||sessionApp&&/痛|違和感|炎症/.test(x.memo||''));$('recovery').innerHTML=`<p>直近7日：痛み・炎症の記録 <strong>${flagged.length} 件</strong></p>`+parts.map(p=>{const x=r.find(x=>x.part===p&&dayDiff(now,x.date)>=0);return `<p>${p}：${x?dayDiff(now,x.date)+'日前':'記録なし'} ${x&&dayDiff(now,x.date)===0?'<span class="tag">本日実施</span>':''}</p>`}).join('')+'<small>実施間隔の目安であり、回復状態の医学的判定ではありません。</small>';$('recent').innerHTML=sessionApp?sessionApp.recentHTML():r.length?r.slice(0,6).map(x=>`<div class="entry"><strong>${esc(x.date)} · ${esc(x.exercise)}</strong> <span class="tag">${esc(x.place)}</span><div class="muted">${fmt(x.weight)}kg × ${fmt(x.reps)}回 × ${fmt(x.sets)}セット ／ ${fmt(x.minutes)}分</div></div>`).join(''):'<p>記録がありません。「使い方」からサンプルを追加できます。</p>';renderHistory();renderAI();buildLocalAdvice()}
+function renderHistory(){
+ if(sessionApp){$('groupBy').disabled=!!historyEditor;$('filterPlace').disabled=!!historyEditor;$('historyList').innerHTML=sessionApp.renderHistory(historyEditor,$('groupBy').value,$('filterPlace').value);sessionApp.renderMigration();return}
+ $('groupBy').disabled=!!historyEditor;$('filterPlace').disabled=!!historyEditor;const place=$('filterPlace').value,cards=historyCards().filter(c=>place==='all'||c.place===place),weeks=new Map();
+ for(const card of cards){const key=$('groupBy').value==='week'?isoWeek(card.date):'';if(!weeks.has(key))weeks.set(key,new Map());const dates=weeks.get(key);if(!dates.has(card.date))dates.set(card.date,[]);dates.get(card.date).push(card)}
+ $('historyList').innerHTML=[...weeks].map(([week,dates])=>(week?`<h3 class="history-week">${esc(week)} の週</h3>`:'')+[...dates].map(([date,items])=>`<div class="history-day" data-history-date="${esc(date)}"><h3>${esc(date)}</h3>${renderHistoryTime(date)}${items.map(card=>`<article class="history-exercise${historyEditor?.kind==='card'&&historyEditor.id===card.id?' editing':''}" data-card-id="${esc(card.id)}">${historyEditor?.kind==='card'&&historyEditor.id===card.id?renderCardEditor(card):`<div class="history-card-head"><div><h4>${esc(card.exercise)}</h4><span class="tag">${esc(card.part)}</span><small>${esc(card.place)}・合計${fmt(card.rows.reduce((n,r)=>n+num(r.sets),0))}セット</small></div><button type="button" class="reorder-handle" data-reorder="${esc(card.id)}" aria-label="長押ししてこの種目を並べ替え">≡</button></div><div class="history-sets">${card.rows.map((r,i)=>`<div class="history-set" data-record-id="${esc(r.id)}"><div class="set-values"><span>${i+1}行目</span><strong>${fmt(r.weight)}kg × ${fmt(r.reps)}回</strong><span>${fmt(r.sets)}セット</span></div><p class="history-condition">体調 ${fmt(r.condition)}/5 ／ 痛み：${esc(r.pain)} ／ 炎症：${esc(r.inflammation)}</p><p class="history-memo">メモ：${esc(r.memo)||'なし'}</p><button type="button" class="delete-set" data-delete="${esc(r.id)}" aria-label="${esc(card.exercise)}の${i+1}行目を削除">この行を削除</button></div>`).join('')}</div><div class="history-card-actions"><button type="button" data-card-edit="${esc(card.id)}">編集</button><button type="button" data-card-move="${esc(card.id)}" data-step="-1" aria-label="この種目を上へ">↑ 上へ</button><button type="button" data-card-move="${esc(card.id)}" data-step="1" aria-label="この種目を下へ">↓ 下へ</button></div>`}</article>`).join('')}</div>`).join('')).join('')||'<p>該当する記録はありません。</p>';
+}
+function renderAI(){if(sessionApp){$('summary').value=sessionApp.summary();return}const r=sorted(),now=today(),recent=r.filter(x=>dayDiff(now,x.date)>=0&&dayDiff(now,x.date)<14),previous=r.filter(x=>dayDiff(now,x.date)>=14&&dayDiff(now,x.date)<28);const lines=['以下は私の筋トレ記録です。初心者〜中級者にもわかる言葉で、負荷の推移、部位の偏り、休養、痛み・炎症への配慮を分析し、次の1週間の無理のない計画を提案してください。診断はしないでください。','',`集計日：${now} / 直近14日：${recent.length}種目、${new Set(recent.map(x=>x.date)).size}運動日`,`外部重量ボリューム：${fmt(recent.reduce((a,x)=>a+volume(x),0))}kg（前の14日：${fmt(previous.reduce((a,x)=>a+volume(x),0))}kg）`,'','【記録】'];for(const x of recent) {const older=r.filter(y=>y.exercise===x.exercise&&dateNum(y.date)<dateNum(x.date));const prior=older[0];const change=prior&&volume(prior)>0?` / 同種目前回比 ${fmt((volume(x)/volume(prior)-1)*100)}%`:'';lines.push(`${x.date}｜${x.place}｜${x.exercise}（${x.part}）｜${x.weight}kg × ${x.reps}回 × ${x.sets}セット｜${x.minutes}分｜体調${x.condition}/5｜痛み:${x.pain}｜炎症:${x.inflammation}｜Watch消費:${x.calories||'未記録'}kcal${change}${x.memo?'｜メモ:'+x.memo:''}`)}if(!recent.length)lines.push('直近14日の記録なし');lines.push('','【確認したいこと】','1. 部位別の運動量や休養間隔に偏りはあるか？','2. 痛みや炎症のある日はどのように負荷を調整すべきか？','3. 会社の昼トレと自宅トレを組み合わせた来週の現実的な計画は？','※自重種目の外部重量は0kgとしており、総ボリュームに含まれません。');$('summary').value=lines.join('\n')}
+function buildLocalAdvice(){const now=today(),recent=sorted().filter(r=>dayDiff(now,r.date)>=0&&dayDiff(now,r.date)<14),last=sorted()[0],place=$('nextPlace').value,mins=Number($('nextMinutes').value),parts=['胸','背中','脚','肩','腕','体幹'],counts=Object.fromEntries(parts.map(p=>[p,recent.filter(r=>r.part===p).reduce((n,r)=>n+num(r.sets),0)])),flag=recent.filter(r=>r.pain!=='なし'||r.inflammation==='あり'||sessionApp&&/痛|違和感|炎症/.test(r.memo||'')),latest=sorted().filter(r=>dayDiff(now,r.date)>=0&&dayDiff(now,r.date)<=3),caution=latest.some(r=>r.pain==='中程度'||r.pain==='強い'||r.inflammation==='あり'||sessionApp&&/痛|違和感|炎症/.test(r.memo||'')),avg=sessionApp?sessionApp.averageCondition():recent.length?recent.reduce((n,r)=>n+num(r.condition),0)/recent.length:0;let lines=[];if(!recent.length){lines.push('記録がまだありません。まずは数回記録すると、部位や負荷に合わせた提案ができます。');}else{lines.push('直近14日：'+recent.length+'種目 / '+new Set(recent.map(r=>r.date)).size+'運動日 / 外部重量 '+fmt(recent.reduce((n,r)=>n+volume(r),0))+'kg');lines.push('部位別セット数：'+parts.map(p=>p+counts[p]).join('、'));lines.push('平均体調（確認済みセッション）：'+fmt(avg)+'/5、痛み・炎症の記録：'+flag.length+'件');}if(caution){lines.push('【優先】直近3日以内に中程度以上の痛み、または炎症の記録があります。症状のある部位を負荷にさらすメニューは提案しません。休養・軽い動作確認を優先し、持続・悪化する症状は医療専門家に相談してください。');lines.push('候補：休養または痛みのない範囲での軽い歩行・ストレッチ（'+Math.min(mins,20)+'分以内）。');}else{const lastByPart=Object.fromEntries(parts.map(p=>[p,sorted().find(r=>r.part===p)]));const eligible=parts.filter(p=>!lastByPart[p]||dayDiff(now,lastByPart[p].date)>=2).sort((a,b)=>counts[a]-counts[b]);if(!eligible.length)lines.push('直近48時間以内に各部位の実施記録があります。今日は休養や軽い活動を検討してください。');else{const chosen=eligible.slice(0,2);lines.push('次回候補：'+chosen.join('・')+'（直近の実施頻度と約48時間の間隔を参考に選択）');const company={'胸':['チェストプレス','軽めのベンチプレス'],'背中':['ラットプルダウン','シーテッドロー'],'脚':['軽めのスクワット','レッグプレス'],'肩':['軽めのサイドレイズ'],'腕':['アームカール','ケーブルプレスダウン'],'体幹':['プランク']},home={'胸':['壁腕立て・腕立て伏せ'],'背中':['タオルローイング（安全な姿勢で）'],'脚':['自重スクワット'],'肩':['肩の痛みがない範囲での軽い運動'],'腕':['膝つき腕立て伏せ'],'体幹':['プランク']};for(const p of chosen){const ex=(place==='会社・昼トレ'?company:home)[p][0];const prev=sorted().find(r=>r.part===p&&r.place===place&&r.weight>0);lines.push('・'+ex+'：2〜3セット × 8〜12回'+(prev?'（過去の参考重量 '+fmt(prev.weight)+'kg。増量せず余裕のある負荷から）':'（痛みのない軽い負荷から）'));}lines.push('目安：'+mins+'分（準備運動を含む）。強い疲労や痛みが出たら中止。');}}$('localAdvice').textContent=lines.join('\n');return lines.join('\n')}
 async function askModel(){const btn=$('askAI');btn.disabled=true;$('aiStatus').textContent='分析しています…';$('aiResult').textContent='';try{const r=await fetch('/api/analyze',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({records:sorted().filter(x=>dayDiff(today(),x.date)>=0&&dayDiff(today(),x.date)<28).slice(0,150),place:$('nextPlace').value,minutes:Number($('nextMinutes').value),localAdvice:buildLocalAdvice()})});const data=await r.json();if(!r.ok)throw Error(data.error||'APIエラー');$('aiResult').textContent=data.analysis;$('aiStatus').textContent='分析完了。提案内容は参考情報です。'}catch(e){$('aiStatus').textContent='AI接続に失敗しました：'+e.message+'。APIサーバー設定をご確認ください。手動コピーも利用できます。'}finally{btn.disabled=false}}
 $('suggest').onclick=buildLocalAdvice;$('nextPlace').onchange=buildLocalAdvice;$('nextMinutes').onchange=buildLocalAdvice;$('askAI').onclick=askModel;
 function download(name,text,type){const blob=new Blob(['\ufeff'+text],{type}),url=URL.createObjectURL(blob),a=document.createElement('a');a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
-load();document.querySelector('[name=date]').value=today();document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('section').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab));render()});$('entryForm').onsubmit=e=>{e.preventDefault();const f=Object.fromEntries(new FormData(e.target));let id;try{id=createRecordId()}catch(error){alert(error.message);return}const r={...f,id,weight:num(f.weight),reps:num(f.reps),sets:num(f.sets),minutes:num(f.minutes),calories:num(f.calories),condition:num(f.condition)};if(!valid(r)){alert('入力内容を確認してください');return}if(!commitRecords([...records,r]))return;$('saveStatus').textContent='保存しました';render();setTimeout(()=>$('saveStatus').textContent='',2500)};$('groupBy').onchange=renderHistory;$('filterPlace').onchange=renderHistory;$('historyList').onclick=e=>{const b=e.target.closest('[data-delete]');if(b&&confirm('この記録を削除しますか？')){commitRecords(records.filter(x=>x.id!==b.dataset.delete))}};$('refresh').onclick=renderAI;$('copy').onclick=async()=>{try{await navigator.clipboard.writeText($('summary').value);alert('コピーしました')}catch{$('summary').select();alert('テキストを選択しました。手動でコピーしてください。')}};$('export').onclick=()=>download('shiba-train-log.json',JSON.stringify(records,null,2),'application/json');$('csv').onclick=()=>{const keys=['date','place','exercise','part','weight','reps','sets','minutes','condition','pain','inflammation','calories','memo'];const quote=x=>'"'+String(x??'').replaceAll('"','""')+'"';download('shiba-train-log.csv',[keys.join(','),...sorted().map(r=>keys.map(k=>quote(r[k])).join(','))].join('\r\n'),'text/csv')};$('import').onchange=async e=>{const file=e.target.files[0];if(!file)return;try{const data=JSON.parse((await file.text()).replace(/^\ufeff/,''));if(!Array.isArray(data)||!data.every(valid))throw Error('invalid');if(!confirm(`${data.length}件の記録で現在のデータを置き換えますか？`))return;commitRecords(normalizeIds(data))}catch{alert('読み込みに失敗しました。形式を確認してください。')}finally{e.target.value=''}};
-$('sample').onclick=()=>{const now=new Date(today()+'T12:00:00');const date=days=>{let d=new Date(now);d.setDate(d.getDate()-days);return d.toLocaleDateString('sv-SE')};const samples=[[1,'会社・昼トレ','ベンチプレス','胸',55,8,3,25,4,'なし','なし',160,'フォームを意識'],[2,'自宅・自重','腕立て伏せ','胸',0,15,3,18,4,'なし','なし',95,'自重トレ'],[3,'会社・昼トレ','ラットプルダウン','背中',45,10,3,30,3,'軽い','なし',180,'肩の様子を確認'],[5,'会社・昼トレ','スクワット','脚',60,8,3,35,4,'なし','なし',210,''],[8,'会社・昼トレ','ベンチプレス','胸',50,8,3,25,3,'なし','なし',150,'前回記録'],[10,'自宅・自重','プランク','体幹',0,0,3,15,3,'なし','なし',75,'各セット45秒'],[12,'会社・昼トレ','ショルダープレス','肩',20,10,3,25,2,'中程度','あり',140,'肩に違和感があり中止を検討']];const next=[...records];let added=0;for(const [offset,place,exercise,part,weight,reps,sets,minutes,condition,pain,inflammation,calories,memo] of samples){const id='demo-'+offset;if(next.some(r=>r.id===id))continue;next.push({id,date:date(offset),place,exercise,part,weight,reps,sets,minutes,condition,pain,inflammation,calories,memo});added++}if(!commitRecords(next))return;alert(`${added}件のサンプルを追加しました`)};$('clear').onclick=()=>{if(confirm('すべての記録を削除します。バックアップは取りましたか？')&&confirm('本当に全件削除しますか？')){commitRecords([])}};render();
+// Refresh on foreground return and local-day rollover; native updates can call
+// refreshActiveEnergy() after replacing energyProvider with a HealthKit adapter.
+$('metrics').onclick=e=>{
+  if(e.target.id!=='energySample')return;
+  energyProvider=energyProvider===energyProviders.sample?energyProviders.disconnected:energyProviders.sample;
+  e.target.textContent=energyProvider===energyProviders.sample?'サンプルを終了':'サンプルを表示';
+  refreshActiveEnergy();
+};
+document.addEventListener('visibilitychange',()=>{if(!document.hidden)refreshActiveEnergy()});
+setInterval(()=>refreshActiveEnergy(),60000);
+
+function saveHistoryMove(source,target,position=null){const next=reorderedRecords(source,target,position);if(!next)return;const ok=commitRecords(next);$('reorderStatus').textContent=ok?'並び順を保存しました。':'保存できませんでした。元の並び順を維持しています。'}
+function saveHistoryCardMove(source,target,position=null){const next=reorderedCards(source,target,position);if(!next)return;const ok=commitRecords(next);$('reorderStatus').textContent=ok?'種目カードの並び順を保存しました。':'保存できませんでした。元の並び順を維持しています。'}
+$('addSet').onclick=()=>{const last=$('setRows').lastElementChild;addSetRow(last?.querySelector('[data-weight]').value??0,last?.querySelector('[data-reps]').value??10)};
+$('setRows').onclick=e=>{const button=e.target.closest('[data-remove-set]');if(button){if($('setRows').children.length===1){alert('セットは1行以上必要です。');return}button.closest('.set-row').remove()}};
+addSetRow();
+let drag=null;
+function clearHistoryDrag(){
+ if(!drag)return;
+ const previous=drag;drag=null;
+ previous.row.classList.remove('moving');
+ clearTimeout(previous.timer);
+ if(previous.frame&&typeof cancelAnimationFrame==='function')cancelAnimationFrame(previous.frame);
+ previous.animations?.forEach(animation=>animation.cancel());
+ previous.target?.classList.remove('drop-target');
+ previous.target?.removeAttribute('data-drop-label');
+ previous.ghost?.remove();
+ if(previous.active&&previous.parent)previous.rows.forEach(row=>previous.parent.append(row));
+ if(previous.active)document.body.style.overscrollBehavior=previous.overscroll;
+ try{previous.handle.releasePointerCapture(previous.pointer)}catch{}
+}
+function previewCardPosition(){
+ if(!drag?.target||!drag.parent?.insertBefore)return;
+ const before=new Map(drag.rows.map(row=>[row,row.getBoundingClientRect().top]));
+ drag.animations?.forEach(animation=>animation.cancel());
+ drag.parent.insertBefore(drag.row,drag.position==='before'?drag.target:drag.target.nextSibling);
+ drag.animations=drag.rows.filter(row=>row!==drag.row).map(row=>{
+ const delta=before.get(row)-row.getBoundingClientRect().top;
+ return delta?row.animate?.([{transform:`translateY(${delta}px)`},{transform:'translateY(0)'}],{duration:160,easing:'ease-out'}):null;
+ }).filter(Boolean);
+}
+function historyDragFrame(time){
+ if(!drag?.active)return;
+ const state=drag,viewport=globalThis.visualViewport?.height??globalThis.innerHeight??600;
+ const current=globalThis.scrollY??0,rects=state.rows.map(row=>row.getBoundingClientRect()),speed=edgeScrollSpeed(state.lastY,viewport);
+ const top=Math.max(0,Math.min(...rects.map(rect=>rect.top))+current-24),bottom=Math.max(top,Math.max(...rects.map(rect=>rect.bottom))+current-viewport+24);
+ const elapsed=Math.min(32,Math.max(0,time-(state.lastFrame??time)))/1000;state.lastFrame=time;
+ const delta=speed*elapsed,desired=delta>0?Math.min(current+delta,Math.max(current,bottom)):Math.max(current+delta,Math.min(current,top));
+ if(desired!==current){globalThis.scrollBy?.(0,desired-current);updateHistoryDrag({pointerId:state.pointer,clientX:state.lastX,clientY:state.lastY,preventDefault(){}})}
+ if(drag===state)state.frame=requestAnimationFrame(historyDragFrame);
+}
+function updateHistoryDrag(e){
+ if(!drag||drag.pointer!==e.pointerId)return;
+ if(!drag.active){if(Math.hypot(e.clientX-drag.x,e.clientY-drag.y)>10)clearHistoryDrag();return}
+ e.preventDefault();
+ drag.lastX=e.clientX;drag.lastY=e.clientY;
+ const bounds=drag.rows.map(row=>row.getBoundingClientRect());
+ const top=Math.min(...bounds.map(rect=>rect.top)),bottom=Math.max(...bounds.map(rect=>rect.bottom));
+ const y=Math.min(Math.max(e.clientY-drag.offset,top),Math.max(top,bottom-drag.height));
+ drag.ghost.style.transform=`translateY(${y-drag.top}px) scale(1.01)`;
+ const oldTarget=drag.target,oldPosition=drag.position;
+ const row=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-card-id]');
+ if(row===drag.row)return;
+ drag.target?.classList.remove('drop-target');drag.target?.removeAttribute('data-drop-label');drag.target=null;
+ if(!row||!drag.rows.includes(row))return;
+ const rect=row.getBoundingClientRect();
+ drag.target=row;drag.position=e.clientY<rect.top+rect.height/2?'before':'after';
+ row.classList.add('drop-target');row.setAttribute('data-drop-label',drag.position==='before'?'この種目の前へ移動':'この種目の後へ移動');
+ if(oldTarget!==row||oldPosition!==drag.position)previewCardPosition();
+}
+function startHistoryDrag(state){
+ if(drag!==state)return;
+ const rect=state.row.getBoundingClientRect(),ghost=state.row.cloneNode(true);
+ ghost.classList.add('drag-ghost');ghost.setAttribute('aria-hidden','true');
+ ghost.querySelectorAll('button').forEach(button=>button.tabIndex=-1);
+ ghost.style.top=rect.top+'px';ghost.style.left=rect.left+'px';ghost.style.width=rect.width+'px';ghost.style.transform='scale(1.01)';document.body.append(ghost);
+ Object.assign(state,{active:true,ghost,top:rect.top,height:Math.min(rect.height,(globalThis.innerHeight??600)*.45),offset:state.y-rect.top,overscroll:document.body.style.overscrollBehavior,parent:state.row.parentNode,lastX:state.x,lastY:state.y});
+ document.body.style.overscrollBehavior='none';state.row.classList.add('moving');
+ if(typeof requestAnimationFrame==='function')state.frame=requestAnimationFrame(historyDragFrame);
+ $('reorderStatus').textContent='移動先のカードに重ねて指を離してください。カードの中央で前後を判定します。';
+}
+$('historyList').addEventListener('pointerdown',e=>{
+ const handle=e.target.closest('[data-reorder]');if(!handle||e.button!==0||drag||historyEditor)return;
+ const row=handle.closest('[data-card-id]'),cards=historyCards(),source=cards.find(c=>c.id===handle.dataset.reorder);
+ if(!row||!source||sessionApp&&source.pending)return;
+ const rows=[...$('historyList').querySelectorAll('[data-card-id]')].filter(node=>cards.find(c=>c.id===node.dataset.cardId)?.date===source.date&&(!sessionApp||cards.find(c=>c.id===node.dataset.cardId)?.sessionId===source.sessionId));
+ drag={id:source.id,pointer:e.pointerId,row,rows,handle,x:e.clientX,y:e.clientY,active:false,target:null,position:null};
+ const state=drag;state.timer=setTimeout(()=>startHistoryDrag(state),450);
+ handle.setPointerCapture(e.pointerId);
+ $('reorderStatus').textContent='長押しすると種目カードを移動できます。';
+});
+$('historyList').addEventListener('pointermove',updateHistoryDrag,{passive:false});
+$('historyList').addEventListener('pointerup',e=>{
+ if(!drag||drag.pointer!==e.pointerId)return;
+ updateHistoryDrag(e);
+ if(!drag)return;
+ const source=drag.id,target=drag.active?drag.target?.dataset.cardId:null,position=drag.position;
+ clearHistoryDrag();if(target)saveHistoryCardMove(source,target,position);else $('reorderStatus').textContent='並べ替えは行いませんでした。';
+});
+$('historyList').addEventListener('pointercancel',clearHistoryDrag);
+$('historyList').addEventListener('lostpointercapture',clearHistoryDrag);
+$('historyList').addEventListener('contextmenu',e=>{if(e.target.closest('[data-reorder]'))e.preventDefault()});
+let editPress=null;
+function clearEditPress(){if(editPress)clearTimeout(editPress.timer);editPress=null}
+$('historyList').addEventListener('pointerdown',e=>{
+ if(historyEditor||drag||e.button!==0||e.target.closest('button,input,select,textarea,form,a'))return;
+ const card=e.target.closest('[data-card-id]'),time=e.target.closest('[data-time-date]');
+ if(!card&&!time)return;
+ clearEditPress();const state={x:e.clientX,y:e.clientY,pointer:e.pointerId};editPress=state;
+ state.timer=setTimeout(()=>{if(editPress===state){editPress=null;openHistoryEditor(card?'card':'time',card?card.dataset.cardId:time.dataset.timeDate)}},500);
+});
+$('historyList').addEventListener('pointermove',e=>{if(editPress&&e.pointerId===editPress.pointer&&Math.hypot(e.clientX-editPress.x,e.clientY-editPress.y)>8)clearEditPress()});
+document.addEventListener('pointerup',clearEditPress);
+document.addEventListener('pointercancel',clearEditPress);
+$('historyList').addEventListener('contextmenu',e=>{if(!historyEditor&&e.target.closest('[data-card-id],[data-time-date]'))e.preventDefault()});
+$('historyList').oninput=$('historyList').onchange=e=>{
+ if(!historyEditor)return;const input=e.target;
+ if(historyEditor.kind==='time'&&input.dataset.sessionIndex!==undefined)historyEditor.draft[Number(input.dataset.sessionIndex)][input.dataset.sessionField]=input.value;
+ if(historyEditor.kind==='time'&&input.dataset.timeIndex!==undefined)historyEditor.draft[Number(input.dataset.timeIndex)].minutes=input.value;
+ if(historyEditor.kind==='card'){
+ if(input.dataset.editField)historyEditor.draft[input.dataset.editField]=input.value;
+ const row=input.closest('[data-edit-row]');if(row&&input.dataset.rowField)historyEditor.draft.rows[Number(row.dataset.editRow)][input.dataset.rowField]=input.value;
+ }
+};
+$('historyList').addEventListener('submit',e=>{
+ if(!e.target.hasAttribute('data-history-editor'))return;e.preventDefault();
+ if(!finishHistoryEdit()){const error=$('historyList').querySelector('[data-editor-error]');if(error)error.textContent=historyEditor?.error||'保存できませんでした。'}
+});
+document.addEventListener('touchmove',e=>{if(drag?.active)e.preventDefault()},{passive:false});
+document.addEventListener('visibilitychange',()=>{if(document.hidden){clearHistoryDrag();clearEditPress()}});
+globalThis.addEventListener?.('blur',()=>{clearHistoryDrag();clearEditPress()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')clearHistoryDrag()});
+
+if(globalThis.ShibaTraining&&globalThis.ShibaSessionApp){sessionApp=ShibaSessionApp.create({storage:localStorage,document,esc,fmt,valid,createId:used=>createRecordId(used),cards:()=>historyCards(),week:isoWeek,today,dayDiff,alert:message=>alert(message),download,publish:next=>{records=next;render();selectLatestSession()}});sessionApp.install();}
+load();document.querySelector('[name=date]').value=today();$('entryForm').querySelector('[name=date]').value=today();upgradeLegacySessions();selectLatestSession();$('entryForm').querySelector('[name=date]').onchange=selectLatestSession;$('sessionSelect').onchange=()=>refreshSessionInput();$('entryForm').querySelector('[name=place]').onchange=()=>refreshSessionInput('');document.querySelectorAll('[data-tab]').forEach(b=>b.onclick=()=>{document.querySelectorAll('[data-tab]').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('section').forEach(x=>x.classList.toggle('active',x.id===b.dataset.tab));render()});$('entryForm').onsubmit=e=>{e.preventDefault();if(historyEditor){alert('履歴の編集を保存またはキャンセルしてください。');return}const f=Object.fromEntries(new FormData(e.target));let next;try{next=buildSetRecords(f,[...$('setRows').querySelectorAll('.set-row')].map(row=>({weight:row.querySelector('[data-weight]').value,reps:row.querySelector('[data-reps]').value,...(sessionApp?{sets:row.querySelector('[data-sets]').value}:{})})))}catch(error){alert(error.message);return}if(!commitRecords(next))return;
+refreshSessionInput(next[next.length-1].sessionId);$('saveStatus').textContent='保存しました';render();setTimeout(()=>$('saveStatus').textContent='',2500)};
+$('groupBy').onchange=renderHistory;$('filterPlace').onchange=renderHistory;
+$('historyList').onclick=e=>{
+ if(e.target.closest('[data-edit-cancel]')){historyEditor=null;renderHistory();return}
+ const edit=e.target.closest('[data-card-edit]'),time=e.target.closest('[data-time-edit]');
+ if(edit||time){openHistoryEditor(edit?'card':'time',edit?edit.dataset.cardEdit:time.dataset.timeEdit);return}
+ if(historyEditor){
+ const remove=e.target.closest('[data-edit-remove]'),add=e.target.closest('[data-edit-add]');
+ if(historyEditor.kind==='card'&&remove&&historyEditor.draft.rows.length>1){historyEditor.draft.rows.splice(Number(remove.dataset.editRemove),1);renderHistory()}
+ if(historyEditor.kind==='card'&&add){const last=historyEditor.draft.rows.at(-1);historyEditor.draft.rows.push({...last,id:null,minutes:0,calories:0,sets:1});renderHistory()}
+ return;
+ }
+ const move=e.target.closest('[data-card-move]');
+ if(move){const cards=historyCards(),source=cards.find(c=>c.id===move.dataset.cardMove),visible=cards.filter(c=>c.date===source?.date&&(!sessionApp||c.sessionId===source.sessionId&&!c.pending)&&($('filterPlace').value==='all'||c.place===$('filterPlace').value)),index=visible.findIndex(c=>c.id===source.id),target=visible[index+Number(move.dataset.step)];if(target)saveHistoryCardMove(source.id,target.id);return}
+ const b=e.target.closest('[data-delete]');if(b&&confirm('この記録を削除しますか？')){if(commitRecords(records.filter(x=>x.id!==b.dataset.delete)))selectLatestSession()}
+};
+$('refresh').onclick=renderAI;$('copy').onclick=async()=>{try{await navigator.clipboard.writeText($('summary').value);alert('コピーしました')}catch{$('summary').select();alert('テキストを選択しました。手動でコピーしてください。')}};
+$('export').onclick=()=>download('shiba-train-log.json',JSON.stringify(sessionApp?sessionApp.getDocument():records,null,2),'application/json');$('exportLegacy').onclick=()=>download('shiba-train-log-legacy.json',JSON.stringify(records,null,2),'application/json');
+$('csv').onclick=()=>{const keys=['date','place','exercise','part','weight','reps','sets','minutes','condition','pain','inflammation','calories','memo','sessionId','exerciseId'];const quote=x=>'"'+String(x??'').replaceAll('"','""')+'"';download('shiba-train-log.csv',[keys.join(','),...sorted().map(r=>keys.map(k=>quote(r[k])).join(','))].join('\r\n'),'text/csv')};
+$('import').onchange=async e=>{if(historyEditor){alert('履歴の編集を保存またはキャンセルしてください。');e.target.value='';return}const file=e.target.files[0];if(!file)return;try{const data=JSON.parse((await file.text()).replace(/^\ufeff/,''));if(sessionApp){if(!confirm('現在の記録をJSONの内容で置き換えますか？読み込み前のバックアップを推奨します。'))return;if(sessionApp.importData(data)){records=sessionApp.rows();render();selectLatestSession()}return}if(!Array.isArray(data)||!data.every(valid))throw Error('invalid');if(!confirm(`${data.length}件の記録で現在のデータを置き換えますか？`))return;if(commitRecords(withLegacySessions(normalizeIds(data))))selectLatestSession()}catch{alert('読み込みに失敗しました。形式を確認してください。')}finally{e.target.value=''}};
+$('sample').onclick=()=>{if(historyEditor){alert('履歴の編集を保存またはキャンセルしてください。');return}const now=new Date(today()+'T12:00:00');const date=days=>{let d=new Date(now);d.setDate(d.getDate()-days);return d.toLocaleDateString('sv-SE')};const samples=[[1,'会社・昼トレ','ベンチプレス','胸',55,8,3,25,4,'なし','なし',160,'フォームを意識'],[2,'自宅・自重','腕立て伏せ','胸',0,15,3,18,4,'なし','なし',95,'自重トレ'],[3,'会社・昼トレ','ラットプルダウン','背中',45,10,3,30,3,'軽い','なし',180,'肩の様子を確認'],[5,'会社・昼トレ','スクワット','脚',60,8,3,35,4,'なし','なし',210,''],[8,'会社・昼トレ','ベンチプレス','胸',50,8,3,25,3,'なし','なし',150,'前回記録'],[10,'自宅・自重','プランク','体幹',0,0,3,15,3,'なし','なし',75,'各セット45秒'],[12,'会社・昼トレ','ショルダープレス','肩',20,10,3,25,2,'中程度','あり',140,'肩に違和感があり中止を検討']];const next=[...records];let added=0;for(const [offset,place,exercise,part,weight,reps,sets,minutes,condition,pain,inflammation,calories,memo] of samples){const id='demo-'+offset;if(next.some(r=>r.id===id))continue;next.push({id,date:date(offset),place,exercise,part,weight,reps,sets,minutes,condition,pain,inflammation,calories,memo,...(sessionApp?{sessionId:'sample-session-'+id,sessionMinutes:minutes}:{})});added++}if(!commitRecords(next))return;alert(`${added}件のサンプルを追加しました`)};
+$('clear').onclick=()=>{if(historyEditor){alert('履歴の編集を保存またはキャンセルしてください。');return}if(confirm('すべての記録を削除します。バックアップは取りましたか？')&&confirm('本当に全件削除しますか？'))commitRecords([])};render();
+if(globalThis.ShibaVoiceUI)globalThis.ShibaVoiceUI.init({document,storage:localStorage,today,getRecords:()=>records,commit:commitRecords,isHistoryEditing:()=>!!historyEditor,confirm:message=>confirm(message),services:{valid,validDate,createId:used=>createRecordId(used),sessions:sessionsForDate,sorted:historySorted,sessionModel:!!sessionApp,buildSessionBatch:draft=>sessionApp.voiceBatch(draft)}});
 </script></body></html>
