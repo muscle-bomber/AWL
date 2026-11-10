@@ -16,7 +16,7 @@ try {
         $nodePath = $nodeCommand.Source
     }
 
-    Write-Host 'SHIBA TRAIN LOG：全自動テストを実行します。'
+    Write-Host 'AWL（分析ワークアウトログ）：全自動テストを実行します。'
     Write-Host "使用するNode.js：$nodePath"
     Write-Host 'ブラウザやiPhoneの保存データにはアクセスしません。'
     Write-Host ''
