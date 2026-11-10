@@ -1,7 +1,7 @@
 <!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>SHIBA TRAIN LOG</title><style>
 :root{font-family:system-ui,-apple-system,sans-serif;color:#e9f2f7;background:#0b1420}*{box-sizing:border-box}body{margin:0}header{background:#101f2d;padding:22px max(18px,calc((100vw - 1100px)/2));border-bottom:1px solid #294254}h1{margin:0;font-size:25px;letter-spacing:2px}h2{font-size:20px;margin:0 0 14px}p,small{color:#abc1cd}main{max-width:1100px;margin:auto;padding:20px}nav{display:flex;gap:8px;flex-wrap:wrap;margin:0 0 20px}button,.btn{border:1px solid #37536a;border-radius:10px;padding:11px 15px;background:#182e40;color:#e8f7ff;cursor:pointer;font-weight:650}button.active,.primary{background:#00b8c9;color:#05212b;border-color:#00b8c9}button:hover{filter:brightness(1.15)}section{display:none}section.active{display:block}.card{background:#122333;border:1px solid #294254;border-radius:15px;padding:18px;margin-bottom:15px}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}.metric{font-size:26px;font-weight:800;color:#59e1e9;margin:7px 0}label{display:block;font-size:13px;color:#c1d4de;margin-bottom:6px}input,select,textarea{width:100%;background:#0c1a28;color:#fff;border:1px solid #395469;border-radius:8px;padding:11px;font:inherit}textarea{min-height:130px}form .grid{margin-bottom:14px}.hint{font-size:12px;color:#9db5c2}.row{display:flex;gap:9px;flex-wrap:wrap;align-items:center}.entry{padding:13px 0;border-bottom:1px solid #294254}.entry:last-child{border:0}.muted{color:#9fb5c4}.tag{display:inline-block;background:#224153;color:#78e3ea;padding:3px 8px;border-radius:20px;font-size:12px;margin:3px}.danger{color:#ffb3aa}.chartrow{display:grid;grid-template-columns:80px 1fr 42px;gap:10px;align-items:center;margin:9px 0}.bar{background:#23384a;border-radius:10px;height:12px;overflow:hidden}.bar>i{display:block;background:#12c8d3;height:100%}table{width:100%;border-collapse:collapse;font-size:13px}td,th{padding:9px;border-bottom:1px solid #30475b;text-align:left}th{color:#92cbd3}.scroll{overflow-x:auto}footer{text-align:center;padding:30px;color:#7e9baa}@media(max-width:500px){header{padding:20px}main{padding:12px}.metric{font-size:23px}}
-.set-row{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin-bottom:10px}fieldset{border:1px solid #395469;border-radius:10px;margin:0 0 16px;padding:12px}.reorder-handle{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.reorder-handle{cursor:grab;min-width:44px;min-height:44px;font-size:22px}.history-day{margin:22px 0;min-width:0}.history-time{background:#0c1a28;border:1px solid #294254;border-radius:10px;padding:12px;margin-bottom:12px}.history-exercise{background:#152a3b;border:1px solid #37536a;border-radius:14px;margin:12px 0;padding:14px;min-width:0;max-width:100%;overflow-wrap:anywhere}.history-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.history-card-head>div{min-width:0;flex:1}.history-card-head h4{font-size:18px;line-height:1.5;margin:0 0 6px;word-break:normal}.history-card-head .reorder-handle{flex:0 0 44px}.history-card-head small{line-height:1.7}.history-sets{margin-top:12px}.history-set{border-top:1px solid #30475b;padding:12px 0}.set-values{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}.set-values strong{color:#59e1e9;white-space:nowrap}.history-condition,.history-memo{line-height:1.7;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}.delete-set{font-size:12px;padding:8px 10px}.history-card-actions{display:flex;flex-wrap:wrap;gap:8px}.moving{opacity:.25}.drag-ghost{position:fixed;z-index:1000;pointer-events:none!important;box-shadow:0 12px 30px #0009;outline:2px solid #59e1e9;opacity:.96;margin:0;transform-origin:top center}.drag-ghost *{pointer-events:none!important}.drop-target{background:#214559;box-shadow:0 0 0 2px #59e1e9}.drop-target::after{content:attr(data-drop-label);display:block;color:#78e3ea;font-size:13px;font-weight:bold;padding-top:8px}.history-week{margin-top:24px}.history-time small{display:block}#historyList{min-width:0;max-width:100%}
-.edit-number-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.history-exercise label{margin:10px 0}.history-exercise input,.history-exercise select{min-width:0}.history-exercise textarea{min-height:70px}.moving{height:80px!important;overflow:hidden}.moving>*{visibility:hidden}.moving::before{content:"移動中";color:#59e1e9}.drag-ghost{max-height:45vh;overflow:hidden}.history-time{overflow-wrap:anywhere}
+.set-row{display:grid;grid-template-columns:1fr 1fr auto;gap:10px;align-items:end;margin-bottom:10px}fieldset{border:1px solid #395469;border-radius:10px;margin:0 0 16px;padding:12px}.reorder-handle{touch-action:none;user-select:none;-webkit-user-select:none;-webkit-touch-callout:none}.reorder-handle{cursor:grab;min-width:44px;min-height:44px;font-size:22px}.history-day{margin:22px 0;min-width:0}.history-time{background:#0c1a28;border:1px solid #294254;border-radius:10px;padding:12px;margin-bottom:12px}.history-exercise{background:#152a3b;border:1px solid #37536a;border-radius:14px;margin:12px 0;padding:14px;min-width:0;max-width:100%;overflow-wrap:anywhere}.history-card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px}.history-card-head>div{min-width:0;flex:1}.history-card-head h4{font-size:18px;line-height:1.5;margin:0 0 6px;word-break:normal}.history-card-head .reorder-handle{flex:0 0 44px}.history-card-head small{line-height:1.7}.history-sets{margin-top:12px}.history-set{border-top:1px solid #30475b;padding:12px 0}.set-values{display:flex;flex-wrap:wrap;gap:6px 14px;align-items:baseline}.set-values strong{color:#59e1e9;white-space:nowrap}.history-condition,.history-memo{line-height:1.7;margin:8px 0;white-space:pre-wrap;overflow-wrap:anywhere}.delete-set{font-size:12px;padding:8px 10px}.history-card-actions{display:flex;flex-wrap:wrap;gap:8px}.moving{opacity:.25}.drag-ghost{position:fixed;z-index:1000;pointer-events:none!important;box-shadow:0 12px 30px #0009;outline:2px solid #59e1e9;opacity:.96;margin:0;transform-origin:top center}.drag-ghost *{pointer-events:none!important}.drop-target{position:relative;background:#214559;box-shadow:0 0 0 2px #59e1e9}.drop-target::after{content:attr(data-drop-label);position:absolute;right:8px;bottom:8px;background:#0c1a28;color:#78e3ea;font-size:13px;font-weight:bold;padding:4px 8px}.history-week{margin-top:24px}.history-time small{display:block}#historyList{min-width:0;max-width:100%}
+.edit-number-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px}.history-exercise label{margin:10px 0}.history-exercise input,.history-exercise select{min-width:0}.history-exercise textarea{min-height:70px}.drag-ghost{max-height:45vh;overflow:hidden}.history-time{overflow-wrap:anywhere}
 .history-exercise:not(.editing),.history-time:not(.editing){-webkit-user-select:none;user-select:none;-webkit-touch-callout:none}.editing input,.editing textarea{-webkit-user-select:text;user-select:text}
 .voice-item,.voice-review{border:1px solid #37536a;background:#152a3b;border-radius:12px;padding:14px;margin:14px 0;min-width:0;overflow-wrap:anywhere}.voice-item label{margin:10px 0}.voice-item textarea{min-height:70px}.voice-set{border-top:1px solid #30475b;padding:10px 0}.voice-review>div{border-top:1px solid #30475b;padding:10px 0}#voiceInputRoot h3{margin-top:0}#voiceInputRoot input,#voiceInputRoot select{min-width:0}#voiceInputRoot p{line-height:1.65;white-space:pre-wrap}
 .migration-row{border-top:1px solid #395469;padding:10px 0}.migration-row input[type=checkbox]{width:auto}#migrationPanel pre{white-space:pre-wrap;overflow-wrap:anywhere}.history-session{border-left:2px solid #294254;padding-left:10px}.set-row{grid-template-columns:repeat(3,minmax(0,1fr))}.set-row>button{grid-column:1/-1}@media(max-width:500px){#migrationPanel{padding:12px}}
@@ -321,19 +321,8 @@ function clearHistoryDrag(){
  previous.target?.classList.remove('drop-target');
  previous.target?.removeAttribute('data-drop-label');
  previous.ghost?.remove();
- if(previous.active&&previous.parent)previous.rows.forEach(row=>previous.parent.append(row));
  if(previous.active)document.body.style.overscrollBehavior=previous.overscroll;
  try{previous.captureTarget.releasePointerCapture(previous.pointer)}catch{}
-}
-function previewCardPosition(){
- if(!drag?.target||!drag.parent?.insertBefore)return;
- const before=new Map(drag.rows.map(row=>[row,row.getBoundingClientRect().top]));
- drag.animations?.forEach(animation=>animation.cancel());
- drag.parent.insertBefore(drag.row,drag.position==='before'?drag.target:drag.target.nextSibling);
- drag.animations=drag.rows.filter(row=>row!==drag.row).map(row=>{
- const delta=before.get(row)-row.getBoundingClientRect().top;
- return delta?row.animate?.([{transform:`translateY(${delta}px)`},{transform:'translateY(0)'}],{duration:160,easing:'ease-out'}):null;
- }).filter(Boolean);
 }
 function historyDragFrame(time){
  if(!drag?.active)return;
@@ -354,7 +343,6 @@ function updateHistoryDrag(e){
  const top=Math.min(...bounds.map(rect=>rect.top)),bottom=Math.max(...bounds.map(rect=>rect.bottom));
  const y=Math.min(Math.max(e.clientY-drag.offset,top),Math.max(top,bottom-drag.height));
  drag.ghost.style.transform=`translateY(${y-drag.top}px) scale(1.01)`;
- const oldTarget=drag.target,oldPosition=drag.position;
  const row=document.elementFromPoint(e.clientX,e.clientY)?.closest('[data-card-id]');
  if(row===drag.row)return;
  drag.target?.classList.remove('drop-target');drag.target?.removeAttribute('data-drop-label');drag.target=null;
@@ -362,7 +350,6 @@ function updateHistoryDrag(e){
  const rect=row.getBoundingClientRect();
  drag.target=row;drag.position=e.clientY<rect.top+rect.height/2?'before':'after';
  row.classList.add('drop-target');row.setAttribute('data-drop-label',drag.position==='before'?'この種目の前へ移動':'この種目の後へ移動');
- if(oldTarget!==row||oldPosition!==drag.position)previewCardPosition();
 }
 function startHistoryDrag(state){
  if(drag!==state)return;
@@ -375,26 +362,48 @@ function startHistoryDrag(state){
  if(typeof requestAnimationFrame==='function')state.frame=requestAnimationFrame(historyDragFrame);
  $('reorderStatus').textContent='移動先のカードに重ねて指を離してください。カードの中央で前後を判定します。';
 }
-$('historyList').addEventListener('pointerdown',e=>{
- const handle=e.target.closest('[data-reorder]');if(!handle||e.button!==0||drag||historyEditor)return;
+function beginHistoryDrag(handle,e,input='pointer'){
+ if(!handle||drag||historyEditor)return false;
  const row=handle.closest('[data-card-id]'),cards=historyCards(),source=cards.find(c=>c.id===handle.dataset.reorder);
- if(!row||!source||sessionApp&&source.pending)return;
+ if(!row||!source||sessionApp&&source.pending)return false;
  const rows=[...$('historyList').querySelectorAll('[data-card-id]')].filter(node=>cards.find(c=>c.id===node.dataset.cardId)?.date===source.date&&(!sessionApp||cards.find(c=>c.id===node.dataset.cardId)?.sessionId===source.sessionId));
- // Capture on the stable list: the handle becomes hidden and its card moves.
  const captureTarget=$('historyList');
- drag={id:source.id,pointer:e.pointerId,row,rows,handle,captureTarget,x:e.clientX,y:e.clientY,active:false,target:null,position:null};
+ drag={id:source.id,pointer:e.pointerId,input,row,rows,handle,captureTarget,x:e.clientX,y:e.clientY,active:false,target:null,position:null};
  const state=drag;state.timer=setTimeout(()=>startHistoryDrag(state),450);
- try{captureTarget.setPointerCapture(e.pointerId)}catch{clearHistoryDrag();$('reorderStatus').textContent='操作を開始できませんでした。もう一度長押ししてください。';return}
- $('reorderStatus').textContent='長押しすると種目カードを移動できます。';
+ if(input==='pointer')try{captureTarget.setPointerCapture(e.pointerId)}catch{clearHistoryDrag();$('reorderStatus').textContent='操作を開始できませんでした。もう一度長押ししてください。';return false}
+ $('reorderStatus').textContent='長押しすると種目カードを移動できます。';return true;
+}
+$('historyList').addEventListener('pointerdown',e=>{
+ if(e.button!==0||e.pointerType==='touch'&&'ontouchstart' in globalThis)return;
+ beginHistoryDrag(e.target.closest('[data-reorder]'),e);
 });
+// Track the original touch until touchend even if iOS cancels pointer events.
+$('historyList').addEventListener('touchstart',e=>{
+ const handle=e.target.closest('[data-reorder]'),touch=e.changedTouches?.[0];
+ if(!handle||!touch||historyEditor||drag?.input==='touch')return;
+ clearHistoryDrag();
+ if(beginHistoryDrag(handle,{pointerId:'touch:'+touch.identifier,clientX:touch.clientX,clientY:touch.clientY},'touch'))e.preventDefault();
+},{passive:false});
+function historyTouchPoint(e){return [...(e.changedTouches||[])].find(t=>'touch:'+t.identifier===drag?.pointer)}
+document.addEventListener('touchmove',e=>{
+ if(drag?.input!=='touch'){if(drag?.active)e.preventDefault();return}
+ const touch=historyTouchPoint(e);if(!touch)return;
+ e.preventDefault();updateHistoryDrag({pointerId:drag.pointer,clientX:touch.clientX,clientY:touch.clientY,preventDefault(){}});
+},{passive:false});
+document.addEventListener('touchend',e=>{
+ const touch=historyTouchPoint(e);if(!touch)return;
+ e.preventDefault();finishHistoryDrag({pointerId:drag.pointer,clientX:touch.clientX,clientY:touch.clientY,preventDefault(){}});
+},{passive:false});
+document.addEventListener('touchcancel',e=>{if(historyTouchPoint(e)){clearHistoryDrag();$('reorderStatus').textContent='移動を中断しました。もう一度長押ししてください。'}});
 $('historyList').addEventListener('pointermove',updateHistoryDrag,{passive:false});
-$('historyList').addEventListener('pointerup',e=>{
+function finishHistoryDrag(e){
  if(!drag||drag.pointer!==e.pointerId)return;
  updateHistoryDrag(e);
  if(!drag)return;
  const source=drag.id,target=drag.active?drag.target?.dataset.cardId:null,position=drag.position;
  clearHistoryDrag();if(target)saveHistoryCardMove(source,target,position);else $('reorderStatus').textContent='並べ替えは行いませんでした。';
-});
+}
+$('historyList').addEventListener('pointerup',finishHistoryDrag);
 $('historyList').addEventListener('pointercancel',e=>{if(drag&&e.pointerId===drag.pointer)clearHistoryDrag()});
 $('historyList').addEventListener('lostpointercapture',e=>{if(drag&&e.pointerId===drag.pointer&&e.target===drag.captureTarget)clearHistoryDrag()});
 $('historyList').addEventListener('contextmenu',e=>{if(e.target.closest('[data-reorder]'))e.preventDefault()});
@@ -424,7 +433,7 @@ $('historyList').addEventListener('submit',e=>{
  if(!e.target.hasAttribute('data-history-editor'))return;e.preventDefault();
  if(!finishHistoryEdit()){const error=$('historyList').querySelector('[data-editor-error]');if(error)error.textContent=historyEditor?.error||'保存できませんでした。'}
 });
-document.addEventListener('touchmove',e=>{if(drag?.active)e.preventDefault()},{passive:false});
+
 document.addEventListener('visibilitychange',()=>{if(document.hidden){clearHistoryDrag();clearEditPress()}});
 globalThis.addEventListener?.('blur',()=>{clearHistoryDrag();clearEditPress()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')clearHistoryDrag()});
