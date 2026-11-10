@@ -323,7 +323,7 @@ function clearHistoryDrag(){
  previous.ghost?.remove();
  if(previous.active&&previous.parent)previous.rows.forEach(row=>previous.parent.append(row));
  if(previous.active)document.body.style.overscrollBehavior=previous.overscroll;
- try{previous.handle.releasePointerCapture(previous.pointer)}catch{}
+ try{previous.captureTarget.releasePointerCapture(previous.pointer)}catch{}
 }
 function previewCardPosition(){
  if(!drag?.target||!drag.parent?.insertBefore)return;
@@ -380,9 +380,11 @@ $('historyList').addEventListener('pointerdown',e=>{
  const row=handle.closest('[data-card-id]'),cards=historyCards(),source=cards.find(c=>c.id===handle.dataset.reorder);
  if(!row||!source||sessionApp&&source.pending)return;
  const rows=[...$('historyList').querySelectorAll('[data-card-id]')].filter(node=>cards.find(c=>c.id===node.dataset.cardId)?.date===source.date&&(!sessionApp||cards.find(c=>c.id===node.dataset.cardId)?.sessionId===source.sessionId));
- drag={id:source.id,pointer:e.pointerId,row,rows,handle,x:e.clientX,y:e.clientY,active:false,target:null,position:null};
+ // Capture on the stable list: the handle becomes hidden and its card moves.
+ const captureTarget=$('historyList');
+ drag={id:source.id,pointer:e.pointerId,row,rows,handle,captureTarget,x:e.clientX,y:e.clientY,active:false,target:null,position:null};
  const state=drag;state.timer=setTimeout(()=>startHistoryDrag(state),450);
- handle.setPointerCapture(e.pointerId);
+ try{captureTarget.setPointerCapture(e.pointerId)}catch{clearHistoryDrag();$('reorderStatus').textContent='操作を開始できませんでした。もう一度長押ししてください。';return}
  $('reorderStatus').textContent='長押しすると種目カードを移動できます。';
 });
 $('historyList').addEventListener('pointermove',updateHistoryDrag,{passive:false});
@@ -393,8 +395,8 @@ $('historyList').addEventListener('pointerup',e=>{
  const source=drag.id,target=drag.active?drag.target?.dataset.cardId:null,position=drag.position;
  clearHistoryDrag();if(target)saveHistoryCardMove(source,target,position);else $('reorderStatus').textContent='並べ替えは行いませんでした。';
 });
-$('historyList').addEventListener('pointercancel',clearHistoryDrag);
-$('historyList').addEventListener('lostpointercapture',clearHistoryDrag);
+$('historyList').addEventListener('pointercancel',e=>{if(drag&&e.pointerId===drag.pointer)clearHistoryDrag()});
+$('historyList').addEventListener('lostpointercapture',e=>{if(drag&&e.pointerId===drag.pointer&&e.target===drag.captureTarget)clearHistoryDrag()});
 $('historyList').addEventListener('contextmenu',e=>{if(e.target.closest('[data-reorder]'))e.preventDefault()});
 let editPress=null;
 function clearEditPress(){if(editPress)clearTimeout(editPress.timer);editPress=null}
